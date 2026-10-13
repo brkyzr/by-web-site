@@ -1,0 +1,151 @@
+---
+import Face from './Face.astro';
+import Timeline from './Timeline.astro';
+import '../styles/landing.css';
+import ui from '../content/ui.json';
+import sanatTr from '../content/sanat/tr.json';
+import sanatEn from '../content/sanat/en.json';
+import analistTr from '../content/analist/tr.json';
+import analistEn from '../content/analist/en.json';
+
+const { lang, mode = 'home' } = Astro.props;
+const t = ui[lang];
+const other = lang === 'tr' ? 'en' : 'tr';
+const data = lang === 'tr' ? { sanat: sanatTr, analist: analistTr } : { sanat: sanatEn, analist: analistEn };
+const profiles = ['sanat', 'analist'];
+const url = (l, m) => `/${l}/${m === 'home' ? '' : m + '/'}`;
+const link = (p, n) => ({ kind: 'link', label: data[p].sections[n].title, href: `#${p}-s${n}` });
+const down = (p) => ({ kind: 'link', down: true, label: t.scroll, href: `#${p}-top` });
+const photo = (icon, src) => ({ kind: 'photo', icon, src });
+const key = (p, active) => ({ kind: 'key', p, active, label: t[p], sub: active ? t.back : t[p + 'Desc'] });
+const langTile = (m) => ({ kind: 'lang', label: other.toUpperCase(), href: url(other, m) });
+
+// 15 tiles (5x3). A tile with per-mode faces re-deals when a profile is chosen; others keep their home face.
+// ponytail: photo(icon, src): src stays empty until real photos land in public/photos/, the icon is the placeholder.
+const tiles = [
+  { home: { kind: 'name' } },
+  { home: photo('mask'), sanat: link('sanat', 0), analist: link('analist', 0) },
+  { home: key('sanat'), sanat: key('sanat', true), analist: key('sanat') },
+  { home: photo('star'), sanat: link('sanat', 1), analist: link('analist', 1) },
+  { home: langTile('home'), sanat: langTile('sanat'), analist: langTile('analist') },
+  { home: photo('clap') },
+  { home: photo('bubble') },
+  { home: { kind: 'tagline', label: t.tagline }, sanat: down('sanat'), analist: down('analist') },
+  { home: photo('flow'), sanat: link('sanat', 2), analist: link('analist', 2) },
+  { home: photo('ticket') },
+  { home: photo('flow') },
+  { home: photo('star'), sanat: link('sanat', 3), analist: link('analist', 3) },
+  { home: key('analist'), sanat: key('analist'), analist: key('analist', true) },
+  { home: photo('mask'), analist: link('analist', 4) },
+  { home: photo('clap') },
+];
+const modes = ['home', 'sanat', 'analist'];
+const hasTimeline = (s) => s.items.filter((i) => i.date).length >= 2;
+const title = mode === 'home' ? 'Berkay Yazar' : `Berkay Yazar · ${data[mode].title}`;
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={t.tagline} />
+  </head>
+  <body data-mode={mode}>
+    <a class="skip" href="#content">{t.skip}</a>
+    <h1 class="sr">Berkay Yazar · {t.tagline}</h1>
+
+    {profiles.map((p) => (
+      <nav class="bar" data-p={p} aria-label={data[p].title}>
+        <a class="bar-name" href="#grid">Berkay Yazar</a>
+        <ul>
+          {data[p].sections.map((s, n) => <li><a href={`#${p}-s${n}`} data-s={`${p}-s${n}`}>{s.title}</a></li>)}
+        </ul>
+        <a class="bar-top" href="#grid">{t.top} ↑</a>
+      </nav>
+    ))}
+
+    <div class="grid" id="grid" data-mode={mode}>
+      {tiles.map((tile, i) => (
+        <div class="tile" data-t={i % 3}>
+          {tile.sanat || tile.analist
+            ? modes.map((m) => <Face f={tile[m] ?? tile.home} mode={m} style={`--i:${i}`} />)
+            : <Face f={tile.home} mode="all" style={`--i:${i}`} />}
+        </div>
+      ))}
+    </div>
+
+    <main id="content">
+      {profiles.map((p) => (
+        <div class="profile" data-p={p}>
+          <section class="intro" id={`${p}-top`}>
+            <div class="wrap">
+              <h2 class="name">{data[p].name}</h2>
+              <p class="role">{data[p].title}</p>
+              <p class="about">{data[p].about}</p>
+            </div>
+          </section>
+          {data[p].sections.map((s, n) => (
+            <section class="band" id={`${p}-s${n}`} data-last={n === data[p].sections.length - 1}>
+              <div class="wrap">
+                <h2>{s.title}</h2>
+                {hasTimeline(s)
+                  ? <Timeline items={s.items} id={`${p}${n}`} />
+                  : (
+                    <div class="plain">
+                      {s.items.map((i) => (
+                        <div class="row">
+                          <h3>{i.title}</h3>
+                          {i.meta && <p class="when">{i.meta}</p>}
+                          {i.text && <p>{i.text}</p>}
+                          {i.links && <p class="links">{i.links.map((l) => <a href={l.url}>{l.label}</a>)}</p>}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+              </div>
+            </section>
+          ))}
+        </div>
+      ))}
+    </main>
+
+    <script>
+      const body = document.body;
+      const grid = document.getElementById('grid');
+      const lang = document.documentElement.lang;
+      const set = (m) => {
+        body.dataset.mode = grid.dataset.mode = m;
+        history.replaceState(null, '', `/${lang}/${m === 'home' ? '' : m + '/'}`);
+      };
+      grid.addEventListener('click', (e) => {
+        const k = e.target.closest('[data-go]');
+        if (k) set(k.dataset.go);
+      });
+      addEventListener('keydown', (e) => e.key === 'Escape' && set('home'));
+
+      // timeline: hover (mouse), focus or click selects the node whose detail is shown
+      document.querySelectorAll('.tl').forEach((tl) => {
+        const nodes = [...tl.querySelectorAll('.node')];
+        const pick = (n) => nodes.forEach((x) => {
+          const on = x === n;
+          x.setAttribute('aria-expanded', String(on));
+          x.closest('li').toggleAttribute('data-on', on);
+        });
+        nodes.forEach((n) => {
+          n.addEventListener('pointerenter', (e) => e.pointerType === 'mouse' && pick(n));
+          n.addEventListener('focus', () => pick(n));
+          n.addEventListener('click', () => pick(n));
+        });
+        pick(nodes[0]);
+      });
+
+      // sticky bar: show once the grid is out of view, mark the section being read
+      const bars = document.querySelectorAll('.bar');
+      new IntersectionObserver(([e]) => bars.forEach((b) => b.classList.toggle('on', !e.isIntersecting && body.dataset.mode !== 'home')), { threshold: 0 }).observe(grid);
+      const links = document.querySelectorAll('.bar a[data-s]');
+      const seen = new IntersectionObserver((es) => es.forEach((e) => e.isIntersecting && links.forEach((a) => a.toggleAttribute('aria-current', a.dataset.s === e.target.id))), { rootMargin: '-40% 0px -55% 0px' });
+      document.querySelectorAll('.band').forEach((s) => seen.observe(s));
+    </script>
+  </body>
+</html>

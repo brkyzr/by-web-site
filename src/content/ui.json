@@ -6,10 +6,12 @@
     "sanatDesc": "Tiyatro özgeçmişi ve portfolyo",
     "analistDesc": "Deneyim ve projeler",
     "home": "Ana sayfa",
-    "all": "Tüm sayfa",
+    "all": "Aşağı kaydır",
     "back": "Geri",
     "tagline": "Oyuncu & İş Analisti",
-    "skip": "Ana içeriğe geç"
+    "skip": "Ana içeriğe geç",
+    "scroll": "Aşağı kaydır",
+    "top": "Başa dön"
   },
   "en": {
     "pick": "Choose a profile",
@@ -18,9 +20,11 @@
     "sanatDesc": "Theatre résumé and portfolio",
     "analistDesc": "Experience and projects",
     "home": "Home",
-    "all": "Full page",
+    "all": "Scroll down",
     "back": "Back",
     "tagline": "Actor & Business Analyst",
-    "skip": "Skip to content"
+    "skip": "Skip to content",
+    "scroll": "Scroll down",
+    "top": "Back to top"
   }
 }

@@ -1,25 +1,8 @@
 ---
-import Base from '../../layouts/Base.astro';
+import Landing from '../../components/Landing.astro';
 
 export const getStaticPaths = () =>
   ['tr', 'en'].flatMap((lang) => ['sanat', 'analist'].map((profile) => ({ params: { lang, profile } })));
 const { lang, profile } = Astro.params;
-const { default: c } = await import(`../../content/${profile}/${lang}.json`);
 ---
-<Base lang={lang} title={`${c.name} · ${c.title}`} path={`${profile}/`}>
-  <h1>{c.name}</h1>
-  <p class="meta">{c.title}</p>
-  <p>{c.about}</p>
-  {c.sections.map((s, n) => (
-    <section id={`s${n}`}>
-      <h2>{s.title}</h2>
-      {s.items.map((i) => (
-        <div class="item">
-          <strong>{i.title}</strong> <span class="meta">{i.meta}</span>
-          <div>{i.text}</div>
-          {i.links && <div>{i.links.map((l, n) => <>{n > 0 && ' · '}<a href={l.url}>{l.label}</a></>)}</div>}
-        </div>
-      ))}
-    </section>
-  ))}
-</Base>
+<Landing lang={lang} mode={profile} />

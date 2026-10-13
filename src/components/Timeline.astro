@@ -1,0 +1,26 @@
+---
+// Vertical hairline with nodes; the active node's detail panel sits beside it (stacked inline on phones).
+const { items } = Astro.props;
+const key = (d) => (d.length === 4 ? d + '-00' : d);
+const sorted = [...items].sort((a, b) => key(b.date).localeCompare(key(a.date))); // stable: ties keep file order
+---
+<div class="tl" style={`--n:${sorted.length}`}>
+  <ol>
+    {sorted.map((it, i) => (
+      <li>
+        <button type="button" class="node" aria-expanded="false" aria-controls={`d-${Astro.props.id}-${i}`}>
+          <span class="yr">{it.date.slice(0, 4)}</span>
+          <span class="tt">{it.title}</span>
+        </button>
+        <div class="detail" id={`d-${Astro.props.id}-${i}`}>
+          <div class="shot">
+            {it.photo ? <img src={it.photo} alt="" loading="lazy" /> : <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M10 78l24-30 18 22 14-16 24 24M10 20h80v60H10z" /></svg>}
+          </div>
+          <h3>{it.title}</h3>
+          {it.meta && <p class="when">{it.meta}</p>}
+          {it.text && <p>{it.text}</p>}
+        </div>
+      </li>
+    ))}
+  </ol>
+</div>

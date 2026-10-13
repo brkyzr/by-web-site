@@ -11,7 +11,9 @@
 `src/content/{sanat,analist}/{tr,en}.json` (ad, unvan, hakkında, bölümler/maddeler). UI metinleri: `src/content/ui.json`.
 
 ## Landing (2026-10-13)
-- Pop-art kare ızgara landing yapıldı (`src/pages/[lang]/index.astro`, `src/components/Face.astro`): Sanatçı / İş Analisti kutusuna tıklayınca ızgara o profilin bölüm bağlantılarına dönüşüyor. Fotoğraflar yer tutucu ikon (`photo(icon, src)`).
-- Yazı tipleri self-host: `public/fonts/` (Archivo, Archivo Black; Türkçe karakterler için latin-ext dahil).
-- Bağımsız inceleme yapıldı, düzeltmeler uygulandı. DESIGN.md henüz yazılmadı (gerçek fotoğraflar gelince).
-- Sıradaki: ATS PDF CV, zaman çizelgesi (`year` alanı), gerçek fotoğraflar (`kaynak/foto/`).
+- Pop-art kaldırıldı. Sakin siyah-beyaz tema, vurgu: sanat bordo (#7a1c2a), analist lacivert (#1f3b63). 5×3 açılış ızgarası (telefonda 3 sütun).
+- Tek sayfa: profil seçilince ızgara bölüm kutularına dönüşür, içerik altta açılır, tıklayınca yumuşak kayar. `/tr/sanat/`, `/en/analist/` aynı sayfayı o profil açık gösterir. Kaydırınca üstte ince bölüm barı.
+- Zaman çizelgesi: ≥2 tarihli maddesi olan bölümlerde ince çizgi + düğümler, düğüme gelince yanda detay (telefonda altta). Maddelerde `date` alanı (YYYY veya YYYY-MM), yeni → eski sıralanır. Madde `photo` alanı ile fotoğraf alır.
+- Kod: `src/components/{Landing,Face,Timeline}.astro`, `src/styles/landing.css`. Fontlar `public/fonts/` (Archivo).
+- Henüz push edilmedi, kullanıcı yerelde inceliyor. DESIGN.md ve bağımsız yeniden inceleme bekliyor.
+- Sıradaki: ATS PDF CV, gerçek fotoğraflar (`kaynak/foto/`).

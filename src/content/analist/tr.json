@@ -9,22 +9,26 @@
         {
           "title": "İş Analisti ve Scrum Master — Innovance Consultancy / Allianz Türkiye (dış kaynak)",
           "meta": "Nisan 2024–Devam ediyor",
-          "text": "İş Geliştirme ve Dönüşüm ekibinin üyesi. Teslimatın sorunsuz ilerlemesi için paydaşlar, geliştiriciler ve QA ekipleri arasında koordinasyon; Scrum seremonilerini yönetme ve Agile ilkelerinin etkin uygulanmasını sağlama."
+          "text": "İş Geliştirme ve Dönüşüm ekibinin üyesi. Teslimatın sorunsuz ilerlemesi için paydaşlar, geliştiriciler ve QA ekipleri arasında koordinasyon; Scrum seremonilerini yönetme ve Agile ilkelerinin etkin uygulanmasını sağlama.",
+          "date": "2024-04"
         },
         {
           "title": "İş Analisti (Uzman) — Anadolu Sigorta",
           "meta": "Ağustos 2021–Mart 2024",
-          "text": "Motorlu taşıt sigorta ürünlerinin (ağırlıklı olarak Trafik ve Kasko) BT tarafında iş analisti ve uygulama mühendisi olarak çalıştım: yeni gereksinimlerin analizi ve uygulanması, canlı ortam hatalarının çözümü, müşteri, geliştirici ve test ekipleriyle koordinasyon. Araçlar: Jira, Confluence, Sourcetree, SQL (Oracle), IDIT, MS Excel."
+          "text": "Motorlu taşıt sigorta ürünlerinin (ağırlıklı olarak Trafik ve Kasko) BT tarafında iş analisti ve uygulama mühendisi olarak çalıştım: yeni gereksinimlerin analizi ve uygulanması, canlı ortam hatalarının çözümü, müşteri, geliştirici ve test ekipleriyle koordinasyon. Araçlar: Jira, Confluence, Sourcetree, SQL (Oracle), IDIT, MS Excel.",
+          "date": "2021-08"
         },
         {
           "title": "Aday Mühendis — FNSS Savunma Sistemleri A.Ş.",
           "meta": "Ekim 2019–Haziran 2020",
-          "text": "Kalite Güvencesi ve İş Mükemmelliği Departmanı. Risk yönetimi ve süreç yönetimi üzerine araştırma; geliştirilmekte olan çeşitli sistemlerin geliştirme ve testlerinde görev aldım."
+          "text": "Kalite Güvencesi ve İş Mükemmelliği Departmanı. Risk yönetimi ve süreç yönetimi üzerine araştırma; geliştirilmekte olan çeşitli sistemlerin geliştirme ve testlerinde görev aldım.",
+          "date": "2019-10"
         },
         {
           "title": "Stajlar — FNSS Savunma Sistemleri A.Ş.; Nurol Makina A.Ş.",
           "meta": "2018–2019",
-          "text": ""
+          "text": "",
+          "date": "2019-06"
         }
       ]
     },
@@ -34,7 +38,8 @@
         {
           "title": "Çok Ekipli, Zaman Pencereli Ekip Rotalama — Bitirme Projesi, Güven Hastanesi",
           "meta": "Ekim 2019–Haziran 2020",
-          "text": "Güven Hastanesi Evde Sağlık Birimi'nde, akademik danışmanlık altında proje grubuyla yürütüldü. Belirli kısıtlar altında özel bir karma tamsayılı programlama (MIP) modeli ve çözücü, CBS kütüphaneleri ve açık kaynak API'lerle Python'da bir karar destek sistemi geliştirdim."
+          "text": "Güven Hastanesi Evde Sağlık Birimi'nde, akademik danışmanlık altında proje grubuyla yürütüldü. Belirli kısıtlar altında özel bir karma tamsayılı programlama (MIP) modeli ve çözücü, CBS kütüphaneleri ve açık kaynak API'lerle Python'da bir karar destek sistemi geliştirdim.",
+          "date": "2019-10"
         }
       ]
     },
@@ -44,12 +49,14 @@
         {
           "title": "Endüstri Mühendisliği Lisans — Başkent Üniversitesi",
           "meta": "2016–2020",
-          "text": "Not ortalaması 3.01/4. Tiyatro Topluluğu (başkan yardımcısı, oyuncu, yönetmen yardımcısı); 104.2 RadyoBaşkent (spiker, yapımcı); Bilim Kurgu, Fantezi ve RPG Topluluğu (başkan)."
+          "text": "Not ortalaması 3.01/4. Tiyatro Topluluğu (başkan yardımcısı, oyuncu, yönetmen yardımcısı); 104.2 RadyoBaşkent (spiker, yapımcı); Bilim Kurgu, Fantezi ve RPG Topluluğu (başkan).",
+          "date": "2016"
         },
         {
           "title": "İşletme Lisans — Anadolu Üniversitesi",
           "meta": "2017–2022",
-          "text": ""
+          "text": "",
+          "date": "2017"
         }
       ]
     },

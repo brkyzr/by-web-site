@@ -9,22 +9,26 @@
         {
           "title": "Business Analyst & Scrum Master — Innovance Consultancy / Allianz Turkey (outsourced)",
           "meta": "April 2024–Present",
-          "text": "Member of the Business Development & Transformation team. Coordinating between stakeholders, developers and QA teams to ensure smooth delivery; leading Scrum ceremonies and ensuring effective application of Agile principles."
+          "text": "Member of the Business Development & Transformation team. Coordinating between stakeholders, developers and QA teams to ensure smooth delivery; leading Scrum ceremonies and ensuring effective application of Agile principles.",
+          "date": "2024-04"
         },
         {
           "title": "Business Analyst (Specialist) — Anadolu Insurance Company",
           "meta": "August 2021–March 2024",
-          "text": "Worked on the IT side of motor insurance products (mainly TPL and Casco) as business analyst and implementation engineer: analysing and implementing new requirements, resolving production defects, and coordinating with customers, developers and testers. Tools: Jira, Confluence, Sourcetree, SQL (Oracle), IDIT, MS Excel."
+          "text": "Worked on the IT side of motor insurance products (mainly TPL and Casco) as business analyst and implementation engineer: analysing and implementing new requirements, resolving production defects, and coordinating with customers, developers and testers. Tools: Jira, Confluence, Sourcetree, SQL (Oracle), IDIT, MS Excel.",
+          "date": "2021-08"
         },
         {
           "title": "Candidate Engineer — FNSS Defence Systems Inc.",
           "meta": "October 2019–June 2020",
-          "text": "Quality Assurance and Business Excellence Department. Researched risk management and process management; took part in the development and testing of several systems under development."
+          "text": "Quality Assurance and Business Excellence Department. Researched risk management and process management; took part in the development and testing of several systems under development.",
+          "date": "2019-10"
         },
         {
           "title": "Internships — FNSS Defence Systems Inc.; Nurol Makina Inc.",
           "meta": "2018–2019",
-          "text": ""
+          "text": "",
+          "date": "2019-06"
         }
       ]
     },
@@ -34,7 +38,8 @@
         {
           "title": "Multi-Team, Time-Window Team Routing — Graduation Project, Güven Hospital",
           "meta": "October 2019–June 2020",
-          "text": "Carried out in Güven Hospital's Home Healthcare Unit with a project group under academic consultancy. Developed a specialised MIP model under specific constraints and a decision support system in Python with solver and GIS libraries and open-source APIs."
+          "text": "Carried out in Güven Hospital's Home Healthcare Unit with a project group under academic consultancy. Developed a specialised MIP model under specific constraints and a decision support system in Python with solver and GIS libraries and open-source APIs.",
+          "date": "2019-10"
         }
       ]
     },
@@ -44,12 +49,14 @@
         {
           "title": "B.Sc. Industrial Engineering — Başkent University",
           "meta": "2016–2020",
-          "text": "GPA 3.01/4. Theatre Society (Vice President, actor, assistant director); 104.2 RadyoBaşkent (anchor, producer); Sci-Fi, Fantasy & RPG Society (President)."
+          "text": "GPA 3.01/4. Theatre Society (Vice President, actor, assistant director); 104.2 RadyoBaşkent (anchor, producer); Sci-Fi, Fantasy & RPG Society (President).",
+          "date": "2016"
         },
         {
           "title": "B.A. Business Administration — Anadolu University",
           "meta": "2017–2022",
-          "text": ""
+          "text": "",
+          "date": "2017"
         }
       ]
     },
