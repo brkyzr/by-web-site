@@ -10,8 +10,8 @@ const { default: c } = await import(`../../content/${profile}/${lang}.json`);
   <h1>{c.name}</h1>
   <p class="meta">{c.title}</p>
   <p>{c.about}</p>
-  {c.sections.map((s) => (
-    <section>
+  {c.sections.map((s, n) => (
+    <section id={`s${n}`}>
       <h2>{s.title}</h2>
       {s.items.map((i) => (
         <div class="item">

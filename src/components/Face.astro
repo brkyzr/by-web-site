@@ -1,0 +1,39 @@
+---
+// One face of a landing tile. kind: name | tag | key | link | lang | photo | burst
+const { f, mode } = Astro.props;
+const icons = {
+  mask: '<path class="f" d="M14 18h72v30c0 22-14 36-36 36S14 70 14 48z"/><path d="M30 42q8-8 16 0M54 42q8-8 16 0"/><path d="M32 62q18 16 36 0"/>',
+  spot: '<path class="f" d="M50 6l13 28 30 4-22 21 6 30-27-15-27 15 6-30L7 38l30-4z"/>',
+  clap: '<path class="f" d="M10 40h80v48H10z"/><path class="f" d="M10 40l8-22 72 8-4 14z"/><path d="M28 22l-4 14M48 24l-4 14M68 26l-4 14"/>',
+  flow: '<rect class="f" x="8" y="10" width="30" height="20"/><rect class="f" x="62" y="40" width="30" height="20"/><rect class="f" x="8" y="70" width="30" height="20"/><path d="M38 20h24v20M62 50H50V80H38"/>',
+  ticket: '<path class="f" d="M8 28h84v14a8 8 0 000 16v14H8V58a8 8 0 000-16z"/><path d="M64 28v44" stroke-dasharray="4 6"/>',
+  bubble: '<path class="f" d="M10 14h80v52H46L24 88V66H10z"/><path d="M26 34h48M26 48h30"/>',
+};
+const arrow = '<path d="M8 50h76M54 20l30 30-30 30"/>';
+---
+{f.kind === 'name' && <div class="face name" data-m={mode} style={Astro.props.style}><span class="big">Berkay<br />Yazar</span></div>}
+{f.kind === 'key' && (
+  <button type="button" class:list={['face key', { active: f.active }]} data-m={mode} data-go={f.active ? 'home' : f.p} aria-pressed={f.active ? 'true' : 'false'} style={Astro.props.style}>
+    <span><span class="big">{f.label}</span><span class="sub">{f.sub}</span></span>
+    {!f.active && <svg viewBox="0 0 100 100" class="ico arrow" aria-hidden="true" set:html={arrow} />}
+  </button>
+)}
+{f.kind === 'link' && (
+  <a class:list={['face link', { starlink: f.burst }]} href={f.href} data-m={mode} style={Astro.props.style}>
+    {f.burst && <svg viewBox="0 0 100 100" class="ico star" aria-hidden="true"><path class="f" d="M50 4l9 20 20-9-4 22 22 4-17 14 13 17-22 0-3 22-18-12-18 12-3-22-22 0 13-17L2 41l22-4-4-22 20 9z" /></svg>}
+    <span class="big">{f.label}</span>
+    <svg viewBox="0 0 100 100" class="ico arrow" aria-hidden="true" set:html={arrow} />
+  </a>
+)}
+{f.kind === 'lang' && <a class="face lang" href={f.href} data-m={mode} hreflang={f.label.toLowerCase()} style={Astro.props.style}><span class="big">{f.label}</span></a>}
+{f.kind === 'photo' && (
+  <div class="face photo" data-m={mode} aria-hidden="true" style={Astro.props.style}>
+    {f.src ? <img src={f.src} alt="" loading="lazy" /> : <svg viewBox="0 0 100 100" class="ico" set:html={icons[f.icon]} />}
+  </div>
+)}
+{f.kind === 'burst' && (
+  <div class="face burst" data-m={mode} aria-hidden="true" style={Astro.props.style}>
+    <svg viewBox="0 0 100 100" class="ico star"><path class="f" d="M50 4l9 20 20-9-4 22 22 4-17 14 13 17-22 0-3 22-18-12-18 12-3-22-22 0 13-17L2 41l22-4-4-22 20 9z" /></svg>
+    <span class="big">{f.label}</span>
+  </div>
+)}

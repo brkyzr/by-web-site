@@ -1,4 +1,26 @@
 {
-  "tr": { "pick": "Profil seç", "sanat": "Sanatçı", "analist": "İş Analisti", "sanatDesc": "Tiyatro özgeçmişi ve portfolyo", "analistDesc": "Deneyim ve projeler", "home": "Ana sayfa" },
-  "en": { "pick": "Choose a profile", "sanat": "Performer", "analist": "Business Analyst", "sanatDesc": "Theatre résumé and portfolio", "analistDesc": "Experience and projects", "home": "Home" }
+  "tr": {
+    "pick": "Profil seç",
+    "sanat": "Sanatçı",
+    "analist": "İş Analisti",
+    "sanatDesc": "Tiyatro özgeçmişi ve portfolyo",
+    "analistDesc": "Deneyim ve projeler",
+    "home": "Ana sayfa",
+    "all": "Tüm sayfa",
+    "back": "Geri",
+    "tagline": "Oyuncu & İş Analisti",
+    "skip": "Ana içeriğe geç"
+  },
+  "en": {
+    "pick": "Choose a profile",
+    "sanat": "Performer",
+    "analist": "Business Analyst",
+    "sanatDesc": "Theatre résumé and portfolio",
+    "analistDesc": "Experience and projects",
+    "home": "Home",
+    "all": "Full page",
+    "back": "Back",
+    "tagline": "Actor & Business Analyst",
+    "skip": "Skip to content"
+  }
 }

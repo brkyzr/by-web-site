@@ -9,3 +9,9 @@
 
 ## İçerik nerede
 `src/content/{sanat,analist}/{tr,en}.json` (ad, unvan, hakkında, bölümler/maddeler). UI metinleri: `src/content/ui.json`.
+
+## Landing (2026-10-13)
+- Pop-art kare ızgara landing yapıldı (`src/pages/[lang]/index.astro`, `src/components/Face.astro`): Sanatçı / İş Analisti kutusuna tıklayınca ızgara o profilin bölüm bağlantılarına dönüşüyor. Fotoğraflar yer tutucu ikon (`photo(icon, src)`).
+- Yazı tipleri self-host: `public/fonts/` (Archivo, Archivo Black; Türkçe karakterler için latin-ext dahil).
+- Bağımsız inceleme yapıldı, düzeltmeler uygulandı. DESIGN.md henüz yazılmadı (gerçek fotoğraflar gelince).
+- Sıradaki: ATS PDF CV, zaman çizelgesi (`year` alanı), gerçek fotoğraflar (`kaynak/foto/`).

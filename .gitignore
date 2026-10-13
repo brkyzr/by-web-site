@@ -25,3 +25,5 @@ pnpm-debug.log*
 
 # ham CV/portfolyo kaynakları (kişisel bilgi içerebilir)
 kaynak/
+.impeccable/review/
+.impeccable/mocks/

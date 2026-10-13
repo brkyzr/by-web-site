@@ -1,16 +1,206 @@
 ---
-import Base from '../../layouts/Base.astro';
+import Face from '../../components/Face.astro';
 import ui from '../../content/ui.json';
+import sanat from '../../content/sanat/tr.json';
+import sanatEn from '../../content/sanat/en.json';
+import analist from '../../content/analist/tr.json';
+import analistEn from '../../content/analist/en.json';
 
 export const getStaticPaths = () => [{ params: { lang: 'tr' } }, { params: { lang: 'en' } }];
 const { lang } = Astro.params;
 const t = ui[lang];
+const other = lang === 'tr' ? 'en' : 'tr';
+const sec = {
+  sanat: (lang === 'tr' ? sanat : sanatEn).sections.map((s) => s.title),
+  analist: (lang === 'tr' ? analist : analistEn).sections.map((s) => s.title),
+};
+const link = (p, n) => ({ kind: 'link', label: sec[p][n], href: `/${lang}/${p}/#s${n}` });
+const all = (p) => ({ kind: 'link', burst: true, label: t.all, href: `/${lang}/${p}/` });
+const photo = (icon, src) => ({ kind: 'photo', icon, src });
+
+// 12 tiles. Each: color + a face per mode (home / sanat / analist); a missing face reuses home.
+// ponytail: photo.src stays empty until real photos land in public/photos/, the icon is the placeholder.
+const tiles = [
+  { c: 'yellow', home: { kind: 'name' } },
+  { c: 'pink', home: photo('mask'), sanat: link('sanat', 0), analist: link('analist', 0) },
+  { c: 'cyan', home: { kind: 'key', p: 'sanat', label: t.sanat, sub: t.sanatDesc }, sanat: { kind: 'key', p: 'sanat', active: true, label: t.sanat, sub: t.back }, analist: { kind: 'key', p: 'sanat', label: t.sanat, sub: t.sanatDesc } },
+  { c: 'white', home: photo('spot'), sanat: link('sanat', 1), analist: link('analist', 1) },
+  { c: 'cyan', home: photo('spot'), sanat: photo('spot'), analist: photo('flow') },
+  { c: 'pink', home: { kind: 'key', p: 'analist', label: t.analist, sub: t.analistDesc }, sanat: { kind: 'key', p: 'analist', label: t.analist, sub: t.analistDesc }, analist: { kind: 'key', p: 'analist', active: true, label: t.analist, sub: t.back } },
+  { c: 'yellow', home: photo('clap'), sanat: link('sanat', 2), analist: link('analist', 2) },
+  { c: 'white', home: { kind: 'lang', label: other.toUpperCase(), href: `/${other}/` } },
+  { c: 'cyan', home: photo('flow'), sanat: link('sanat', 3), analist: link('analist', 3) },
+  { c: 'pink', home: photo('ticket'), analist: link('analist', 4) },
+  { c: 'yellow', home: { kind: 'burst', label: t.tagline }, sanat: all('sanat'), analist: all('analist') },
+  { c: 'white', home: photo('bubble') },
+];
+const modes = ['home', 'sanat', 'analist'];
 ---
-<Base lang={lang} title="Berkay Yazar">
-  <h1>Berkay Yazar</h1>
-  <p>{t.pick}</p>
-  <ul>
-    <li><a href={`/${lang}/sanat/`}>{t.sanat}</a>: {t.sanatDesc}</li>
-    <li><a href={`/${lang}/analist/`}>{t.analist}</a>: {t.analistDesc}</li>
-  </ul>
-</Base>
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Berkay Yazar</title>
+    <meta name="description" content={t.tagline} />
+    <style is:global>
+      @font-face { font-family: 'Archivo Black'; font-weight: 400; font-display: swap; src: url('/fonts/ArchivoBlack-latin-ext.woff2') format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+      @font-face { font-family: 'Archivo Black'; font-weight: 400; font-display: swap; src: url('/fonts/ArchivoBlack-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+      @font-face { font-family: 'Archivo'; font-weight: 500 700; font-display: swap; src: url('/fonts/Archivo-latin-ext.woff2') format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+      @font-face { font-family: 'Archivo'; font-weight: 500 700; font-display: swap; src: url('/fonts/Archivo-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+      :root {
+        --ink: #111;
+        --yellow: #ffd60a;
+        --cyan: #27c2f0;
+        --pink: #ff5c8a;
+        --white: #fff;
+        --bd: 4px;
+        --ease: cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      * { box-sizing: border-box; }
+      html { background: var(--cyan); }
+      body {
+        margin: 0;
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        font-family: Archivo, system-ui, sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle, rgba(17, 17, 17, 0.22) 22%, transparent 24%) 0 0 / 14px 14px,
+          var(--cyan);
+      }
+      ::selection { background: var(--ink); color: var(--yellow); }
+      a, button { color: inherit; font: inherit; }
+      :focus-visible { outline: 5px solid var(--ink); outline-offset: -10px; }
+      .active:focus-visible { outline-offset: -18px; }
+      .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+      .skip { position: absolute; left: 8px; top: -60px; background: var(--white); padding: 8px 12px; border: var(--bd) solid var(--ink); z-index: 9; }
+      .skip:focus { top: 8px; }
+
+      .grid {
+        --cols: 2;
+        --k: 2;
+        container-type: inline-size;
+        width: min(100vw, calc(100svh * 4 / 3 - 16px));
+        display: grid;
+        grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+        border: var(--bd) solid var(--ink);
+        background: var(--ink);
+        gap: var(--bd);
+        margin: 0;
+      }
+      @media (min-width: 760px) { .grid { --cols: 4; --k: 1; } }
+      @media (max-width: 759px) { .grid { width: 100vw; } }
+
+      .tile {
+        position: relative;
+        aspect-ratio: 1;
+        overflow: hidden;
+        background: var(--bg);
+        isolation: isolate;
+      }
+      .tile::before { /* Ben-Day dots */
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: radial-gradient(circle, rgba(17, 17, 17, 0.2) 20%, transparent 22%) 0 0 / 11px 11px;
+      }
+      [data-c='yellow'] { --bg: var(--yellow); }
+      [data-c='cyan'] { --bg: var(--cyan); }
+      [data-c='pink'] { --bg: var(--pink); }
+      [data-c='white'] { --bg: var(--white); }
+
+      .face {
+        min-width: 0;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        padding: 8%;
+        text-align: center;
+        text-decoration: none;
+        background: none;
+        border: 0;
+        cursor: pointer;
+        visibility: hidden;
+        opacity: 0;
+        transform: scale(0.82) rotate(-4deg);
+        transition: opacity 0.3s var(--ease), transform 0.4s var(--ease), visibility 0s 0.4s;
+        transition-delay: calc(var(--i) * 25ms);
+      }
+      .face.name, .face.burst, .face.photo { cursor: default; }
+      .face[data-m='all'],
+      .grid[data-mode='home'] .face[data-m='home'],
+      .grid[data-mode='sanat'] .face[data-m='sanat'],
+      .grid[data-mode='analist'] .face[data-m='analist'] {
+        visibility: visible;
+        opacity: 1;
+        transform: none;
+        transition-delay: calc(var(--i) * 25ms), calc(var(--i) * 25ms), 0s;
+      }
+      a.face:active, button.face:active { transform: translate(0, 0); box-shadow: none; }
+
+      .big { font-family: 'Archivo Black', Archivo, sans-serif; text-transform: uppercase; line-height: 0.95; letter-spacing: -0.01em; text-wrap: balance; font-size: clamp(0.61rem, calc(3.4cqw * var(--k)), 3rem); }
+      .name .big { font-size: clamp(0.72rem, calc(3.6cqw * var(--k)), 3.2rem); text-align: left; justify-self: start; align-self: end; }
+      .sub { display: block; margin-top: 0.5em; font-weight: 700; font-size: clamp(0.60rem, calc(1.3cqw * var(--k)), 1.1rem); }
+      .key .big { font-size: clamp(0.60rem, calc(2.8cqw * var(--k)), 2.4rem); }
+      .active { box-shadow: inset 0 0 0 6px var(--ink); }
+      .lang .big { font-size: clamp(0.88rem, calc(5cqw * var(--k)), 4.4rem); }
+      .link .big { font-size: clamp(0.60rem, calc(2.4cqw * var(--k)), 2rem); }
+      .photo { padding: 0; }
+      .photo svg { width: 58%; height: 58%; }
+      .photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.15); mix-blend-mode: multiply; }
+
+      .ico { fill: none; stroke: var(--ink); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(5px 5px 0 var(--ink)); overflow: visible; }
+      .ico .f { fill: var(--white); }
+      .photo .ico { filter: drop-shadow(6px 6px 0 var(--ink)); }
+      .arrow { position: absolute; right: 7%; bottom: 6%; width: clamp(0.77rem, calc(3cqw * var(--k)), 2.6rem); height: auto; filter: none; stroke-width: 11; transition: transform 0.25s var(--ease); }
+      .face:hover .arrow { transform: translateX(6px); }
+      .burst, .starlink { place-items: center; }
+      .star { position: absolute; width: 92%; height: 92%; filter: drop-shadow(5px 5px 0 var(--ink)); }
+      .burst .big, .starlink .big { position: relative; font-size: clamp(0.60rem, calc(1.7cqw * var(--k)), 1.5rem); max-width: 62%; }
+      .starlink .arrow { display: none; }
+      .key { background: var(--bg); }
+      .key .big { font-size: clamp(0.63rem, calc(3.4cqw * var(--k)), 3rem); }
+      a.face:hover, button.face:hover { transform: translate(-5px, -5px); box-shadow: 5px 5px 0 var(--ink); background: none; }
+      .tile:has(.face:hover) { overflow: visible; z-index: 2; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .face { transition: none; transform: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#grid">{t.skip}</a>
+    <main>
+      <h1 class="sr">Berkay Yazar · {t.tagline}</h1>
+      <div class="grid" id="grid" data-mode="home">
+        {tiles.map((tile, i) => (
+          <div class="tile" data-c={tile.c}>
+            {tile.sanat || tile.analist
+              ? modes.map((m) => <Face f={tile[m] ?? tile.home} mode={m} style={`--i:${i}`} />)
+              : <Face f={tile.home} mode="all" style={`--i:${i}`} />}
+          </div>
+        ))}
+      </div>
+    </main>
+    <script>
+      const grid = document.getElementById('grid');
+      const set = (m) => {
+        grid.dataset.mode = m;
+        history.replaceState(null, '', m === 'home' ? location.pathname : '#' + m);
+      };
+      grid.addEventListener('click', (e) => {
+        const k = e.target.closest('[data-go]');
+        if (k) set(k.dataset.go);
+      });
+      const h = location.hash.slice(1);
+      if (h === 'sanat' || h === 'analist') set(h);
+      addEventListener('keydown', (e) => e.key === 'Escape' && set('home'));
+    </script>
+  </body>
+</html>
