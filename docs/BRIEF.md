@@ -28,7 +28,7 @@ TR + EN, iki profilde de, dil değiştirme ile (uluslararası başvurular).
 
 ## Hosting
 - Cloudflare Pages (ücretsiz, kullanıcının hesabı var), GitHub push ile deploy.
-- Adres: `byazar.pages.dev` (alan adı yok; sonra eklenebilir).
+- Adres: `byazar.mr-brkyzr.workers.dev` (Cloudflare workers.dev adresi; alan adı yok; sonra eklenebilir).
 - Bütçe: şu an sıfır, tüm araçlar ücretsiz olmalı.
 
 ## Kısıtlar
