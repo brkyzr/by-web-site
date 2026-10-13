@@ -1,7 +1,9 @@
 ---
+import { ClientRouter } from 'astro:transitions';
 import Face from './Face.astro';
 import Timeline from './Timeline.astro';
 import '../styles/landing.css';
+import { statSync } from 'node:fs';
 import ui from '../content/ui.json';
 import sanatTr from '../content/sanat/tr.json';
 import sanatEn from '../content/sanat/en.json';
@@ -12,36 +14,57 @@ const { lang, mode = 'home' } = Astro.props;
 const t = ui[lang];
 const other = lang === 'tr' ? 'en' : 'tr';
 const data = lang === 'tr' ? { sanat: sanatTr, analist: analistTr } : { sanat: sanatEn, analist: analistEn };
-const profiles = ['sanat', 'analist'];
 const url = (l, m) => `/${l}/${m === 'home' ? '' : m + '/'}`;
-const link = (p, n) => ({ kind: 'link', label: data[p].sections[n].title, href: `#${p}-s${n}` });
+const abs = (path) => new URL(path, Astro.site).href;
+const sectionId = (p, id) => {
+  const n = data[p].sections.findIndex((s) => s.id === id);
+  if (n < 0) throw new Error(`no section "${id}" in ${p}`); // build fails if a tile points at a renamed section
+  return { n, label: data[p].sections[n].title, href: `#${p}-${id}` };
+};
+const link = (p, id) => ({ kind: 'link', label: sectionId(p, id).label, href: sectionId(p, id).href });
 const down = (p) => ({ kind: 'link', down: true, label: t.scroll, href: `#${p}-top` });
 const photo = (icon, src) => ({ kind: 'photo', icon, src });
-const key = (p, active) => ({ kind: 'key', p, active, label: t[p], sub: active ? t.back : t[p + 'Desc'] });
+const key = (p, active, quiet) => ({ kind: 'key', p, active, quiet, label: t[p], sub: active ? t.back : t[p + 'Desc'], href: url(lang, active ? 'home' : p) });
 const langTile = (m) => ({ kind: 'lang', label: other.toUpperCase(), href: url(other, m) });
 
-// 15 tiles (5x3). A tile with per-mode faces re-deals when a profile is chosen; others keep their home face.
+// 15 tiles (5x3). One face per tile for the current mode; a tile without a face for the mode keeps its home face.
 // ponytail: photo(icon, src): src stays empty until real photos land in public/photos/, the icon is the placeholder.
 const tiles = [
   { home: { kind: 'name' } },
-  { home: photo('mask'), sanat: link('sanat', 0), analist: link('analist', 0) },
-  { home: key('sanat'), sanat: key('sanat', true), analist: key('sanat') },
-  { home: photo('star'), sanat: link('sanat', 1), analist: link('analist', 1) },
+  { home: photo('mask'), sanat: link('sanat', 'works'), analist: link('analist', 'experience') },
+  { home: key('sanat'), sanat: key('sanat', true), analist: key('sanat', false, true) },
+  { home: photo('star'), sanat: link('sanat', 'training'), analist: link('analist', 'projects') },
   { home: langTile('home'), sanat: langTile('sanat'), analist: langTile('analist') },
   { home: photo('clap') },
   { home: photo('bubble') },
   { home: { kind: 'tagline', label: t.tagline }, sanat: down('sanat'), analist: down('analist') },
-  { home: photo('flow'), sanat: link('sanat', 2), analist: link('analist', 2) },
+  { home: photo('flow'), sanat: link('sanat', 'skills'), analist: link('analist', 'education') },
   { home: photo('ticket') },
   { home: photo('flow') },
-  { home: photo('star'), sanat: link('sanat', 3), analist: link('analist', 3) },
-  { home: key('analist'), sanat: key('analist'), analist: key('analist', true) },
-  { home: photo('mask'), analist: link('analist', 4) },
+  { home: photo('star'), sanat: link('sanat', 'contact'), analist: link('analist', 'skills') },
+  { home: key('analist'), sanat: key('analist', false, true), analist: key('analist', true) },
+  { home: photo('mask'), analist: link('analist', 'contact') },
   { home: photo('clap') },
 ];
-const modes = ['home', 'sanat', 'analist'];
+const cv = mode === 'home' ? null : (() => {
+  const href = `/cv/berkay-yazar-cv-${mode}-${lang}.pdf`;
+  try { return { href, kb: Math.round(statSync(`public${href}`).size / 1024) }; } catch { return null; } // no PDF yet: no button
+})();
+const profiles = mode === 'home' ? [] : [mode];
 const hasTimeline = (s) => s.items.filter((i) => i.date).length >= 2;
 const title = mode === 'home' ? 'Berkay Yazar' : `Berkay Yazar · ${data[mode].title}`;
+const description = mode === 'home' ? t.descHome : t['desc' + (mode === 'sanat' ? 'Sanat' : 'Analist')];
+const sameAs = mode === 'home' ? [] : (data[mode].sections.at(-1).items[0].links ?? []).map((l) => l.url).filter((u) => !u.startsWith('mailto'));
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Berkay Yazar',
+  url: abs(url(lang, mode)),
+  jobTitle: mode === 'home' ? t.tagline : data[mode].title,
+  description,
+  address: { '@type': 'PostalAddress', addressLocality: 'Ankara', addressCountry: 'TR' },
+  sameAs,
+};
 ---
 <!doctype html>
 <html lang={lang}>
@@ -49,7 +72,19 @@ const title = mode === 'home' ? 'Berkay Yazar' : `Berkay Yazar · ${data[mode].t
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
-    <meta name="description" content={t.tagline} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={abs(url(lang, mode))} />
+    <link rel="alternate" hreflang="tr" href={abs(url('tr', mode))} />
+    <link rel="alternate" hreflang="en" href={abs(url('en', mode))} />
+    <link rel="alternate" hreflang="x-default" href={abs(url('tr', mode))} />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={abs(url(lang, mode))} />
+    <meta property="og:locale" content={lang === 'tr' ? 'tr_TR' : 'en_US'} />
+    <meta name="twitter:card" content="summary" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <ClientRouter />
   </head>
   <body data-mode={mode}>
     <a class="skip" href="#content">{t.skip}</a>
@@ -59,7 +94,7 @@ const title = mode === 'home' ? 'Berkay Yazar' : `Berkay Yazar · ${data[mode].t
       <nav class="bar" data-p={p} aria-label={data[p].title}>
         <a class="bar-name" href="#grid">Berkay Yazar</a>
         <ul>
-          {data[p].sections.map((s, n) => <li><a href={`#${p}-s${n}`} data-s={`${p}-s${n}`}>{s.title}</a></li>)}
+          {data[p].sections.map((s, n) => <li><a href={`#${p}-${s.id}`} data-s={`${p}-${s.id}`}>{s.title}</a></li>)}
         </ul>
         <a class="bar-top" href="#grid">{t.top} ↑</a>
       </nav>
@@ -68,14 +103,12 @@ const title = mode === 'home' ? 'Berkay Yazar' : `Berkay Yazar · ${data[mode].t
     <div class="grid" id="grid" data-mode={mode}>
       {tiles.map((tile, i) => (
         <div class="tile" data-t={i % 3}>
-          {tile.sanat || tile.analist
-            ? modes.map((m) => <Face f={tile[m] ?? tile.home} mode={m} style={`--i:${i}`} />)
-            : <Face f={tile.home} mode="all" style={`--i:${i}`} />}
+          <Face f={tile[mode] ?? tile.home} mode={mode} style={`--i:${i}`} />
         </div>
       ))}
     </div>
 
-    <main id="content">
+    <main id="content" tabindex="-1">
       {profiles.map((p) => (
         <div class="profile" data-p={p}>
           <section class="intro" id={`${p}-top`}>
@@ -83,10 +116,11 @@ const title = mode === 'home' ? 'Berkay Yazar' : `Berkay Yazar · ${data[mode].t
               <h2 class="name">{data[p].name}</h2>
               <p class="role">{data[p].title}</p>
               <p class="about">{data[p].about}</p>
+              {cv && <a class="cv-btn" href={cv.href} download>{t.cv}<small>PDF · {cv.kb} KB</small></a>}
             </div>
           </section>
           {data[p].sections.map((s, n) => (
-            <section class="band" id={`${p}-s${n}`} data-last={n === data[p].sections.length - 1}>
+            <section class="band" id={`${p}-${s.id}`} data-last={n === data[p].sections.length - 1}>
               <div class="wrap">
                 <h2>{s.title}</h2>
                 {hasTimeline(s)
@@ -103,6 +137,7 @@ const title = mode === 'home' ? 'Berkay Yazar' : `Berkay Yazar · ${data[mode].t
                       ))}
                     </div>
                   )}
+                {cv && s.id === 'contact' && <a class="cv-btn light" href={cv.href} download>{t.cv}<small>PDF · {cv.kb} KB</small></a>}
               </div>
             </section>
           ))}
@@ -111,41 +146,41 @@ const title = mode === 'home' ? 'Berkay Yazar' : `Berkay Yazar · ${data[mode].t
     </main>
 
     <script>
-      const body = document.body;
-      const grid = document.getElementById('grid');
-      const lang = document.documentElement.lang;
-      const set = (m) => {
-        body.dataset.mode = grid.dataset.mode = m;
-        history.replaceState(null, '', `/${lang}/${m === 'home' ? '' : m + '/'}`);
-      };
-      grid.addEventListener('click', (e) => {
-        const k = e.target.closest('[data-go]');
-        if (k) set(k.dataset.go);
-      });
-      addEventListener('keydown', (e) => e.key === 'Escape' && set('home'));
+      import { navigate } from 'astro:transitions/client';
 
-      // timeline: hover (mouse), focus or click selects the node whose detail is shown
-      document.querySelectorAll('.tl').forEach((tl) => {
-        const nodes = [...tl.querySelectorAll('.node')];
-        const pick = (n) => nodes.forEach((x) => {
-          const on = x === n;
-          x.setAttribute('aria-expanded', String(on));
-          x.closest('li').toggleAttribute('data-on', on);
-        });
-        nodes.forEach((n) => {
-          n.addEventListener('pointerenter', (e) => e.pointerType === 'mouse' && pick(n));
-          n.addEventListener('focus', () => pick(n));
-          n.addEventListener('click', () => pick(n));
-        });
-        pick(nodes[0]);
-      });
+      // runs on first load and after every router swap
+      function init() {
+        const body = document.body;
+        const grid = document.getElementById('grid');
+        const lang = document.documentElement.lang;
 
-      // sticky bar: show once the grid is out of view, mark the section being read
-      const bars = document.querySelectorAll('.bar');
-      new IntersectionObserver(([e]) => bars.forEach((b) => b.classList.toggle('on', !e.isIntersecting && body.dataset.mode !== 'home')), { threshold: 0 }).observe(grid);
-      const links = document.querySelectorAll('.bar a[data-s]');
-      const seen = new IntersectionObserver((es) => es.forEach((e) => e.isIntersecting && links.forEach((a) => a.toggleAttribute('aria-current', a.dataset.s === e.target.id))), { rootMargin: '-40% 0px -55% 0px' });
-      document.querySelectorAll('.band').forEach((s) => seen.observe(s));
+        // timeline: hover (mouse), focus or click selects the node whose detail is shown
+        document.querySelectorAll('.tl').forEach((tl) => {
+          const nodes = [...tl.querySelectorAll('.node')];
+          const pick = (n) => nodes.forEach((x) => {
+            const on = x === n;
+            x.setAttribute('aria-expanded', String(on));
+            x.closest('li').toggleAttribute('data-on', on);
+          });
+          nodes.forEach((n) => {
+            n.addEventListener('pointerenter', (e) => e.pointerType === 'mouse' && pick(n));
+            n.addEventListener('focus', () => pick(n));
+            n.addEventListener('click', () => pick(n));
+          });
+          pick(nodes[0]);
+        });
+
+        // sticky bar: show once the grid is out of view, mark the section being read
+        const bars = document.querySelectorAll('.bar');
+        new IntersectionObserver(([e]) => bars.forEach((b) => b.classList.toggle('on', !e.isIntersecting)), { threshold: 0 }).observe(grid);
+        const links = document.querySelectorAll('.bar a[data-s]');
+        const seen = new IntersectionObserver((es) => es.forEach((e) => e.isIntersecting && links.forEach((a) => a.toggleAttribute('aria-current', a.dataset.s === e.target.id))), { rootMargin: '-40% 0px -55% 0px' });
+        document.querySelectorAll('.band').forEach((s) => seen.observe(s));
+
+        window.__esc = () => body.dataset.mode !== 'home' && navigate(`/${lang}/`);
+      }
+      document.addEventListener('astro:page-load', init);
+      addEventListener('keydown', (e) => e.key === 'Escape' && window.__esc?.());
     </script>
   </body>
 </html>

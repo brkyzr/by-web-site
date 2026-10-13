@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://byazar.mr-brkyzr.workers.dev/sitemap.xml

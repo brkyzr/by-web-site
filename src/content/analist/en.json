@@ -30,7 +30,8 @@
           "text": "",
           "date": "2019-06"
         }
-      ]
+      ],
+      "id": "experience"
     },
     {
       "title": "Projects",
@@ -41,7 +42,8 @@
           "text": "Carried out in Güven Hospital's Home Healthcare Unit with a project group under academic consultancy. Developed a specialised MIP model under specific constraints and a decision support system in Python with solver and GIS libraries and open-source APIs.",
           "date": "2019-10"
         }
-      ]
+      ],
+      "id": "projects"
     },
     {
       "title": "Education",
@@ -58,7 +60,8 @@
           "text": "",
           "date": "2017"
         }
-      ]
+      ],
+      "id": "education"
     },
     {
       "title": "Skills, Certificates & Awards",
@@ -78,7 +81,8 @@
           "meta": "",
           "text": "First place, 15th Poster Contest, Başkent University Industrial Engineering (June 2020); second place, Ostim Technopark Hackathon (February 2020)."
         }
-      ]
+      ],
+      "id": "skills"
     },
     {
       "title": "Contact",
@@ -98,7 +102,8 @@
             }
           ]
         }
-      ]
+      ],
+      "id": "contact"
     }
   ]
 }

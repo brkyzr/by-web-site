@@ -60,7 +60,8 @@
           "text": "Oyunculuk, yönetmen yardımcılığı, prodüksiyon desteği, organizasyon koordinasyonu, ışık ve ses operasyonu ve sahne arkası iş akışı. İki topluluğun da kurucu üyesi.",
           "date": "2018"
         }
-      ]
+      ],
+      "id": "works"
     },
     {
       "title": "Eğitimler",
@@ -125,7 +126,8 @@
           "text": "Beden–ritim–jest ilişkisi ve fiziksel doğaçlama üzerine temel maske çalışması.",
           "date": "2025-11"
         }
-      ]
+      ],
+      "id": "training"
     },
     {
       "title": "Beceriler ve Diller",
@@ -140,7 +142,8 @@
           "meta": "",
           "text": "Türkçe (ana dil), İngilizce (B2, çalışma düzeyi; TOEFL iBT 87)."
         }
-      ]
+      ],
+      "id": "skills"
     },
     {
       "title": "İletişim",
@@ -168,7 +171,8 @@
             }
           ]
         }
-      ]
+      ],
+      "id": "contact"
     }
   ]
 }

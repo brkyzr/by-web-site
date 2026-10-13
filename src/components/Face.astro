@@ -14,10 +14,10 @@ const arrow = '<path d="M8 50h76M54 20l30 30-30 30"/>';
 {f.kind === 'name' && <div class="face name" data-m={mode} style={style}><span class="big">Berkay<br />Yazar</span></div>}
 {f.kind === 'tagline' && <div class="face tagline" data-m={mode} style={style}><span class="big">{f.label}</span></div>}
 {f.kind === 'key' && (
-  <button type="button" class:list={['face key', { active: f.active }]} data-m={mode} data-go={f.active ? 'home' : f.p} aria-pressed={f.active ? 'true' : 'false'} style={style}>
+  <a class:list={['face key', { active: f.active, quiet: f.quiet }]} href={f.href} data-m={mode} aria-current={f.active ? 'page' : undefined} style={style}>
     <span><span class="big">{f.label}</span><span class="sub">{f.sub}</span></span>
     {!f.active && <svg viewBox="0 0 100 100" class="arrow" aria-hidden="true" set:html={arrow} />}
-  </button>
+  </a>
 )}
 {f.kind === 'link' && (
   <a class:list={['face link', { down: f.down }]} href={f.href} data-m={mode} style={style}>

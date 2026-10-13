@@ -60,7 +60,8 @@
           "text": "Acting, assistant directing, production support, organisational coordination, light and sound operation and backstage workflow. Co-founding member of both companies.",
           "date": "2018"
         }
-      ]
+      ],
+      "id": "works"
     },
     {
       "title": "Training",
@@ -125,7 +126,8 @@
           "text": "Foundational mask work on body–rhythm–gesture relationships and physical improvisation.",
           "date": "2025-11"
         }
-      ]
+      ],
+      "id": "training"
     },
     {
       "title": "Skills & Languages",
@@ -140,7 +142,8 @@
           "meta": "",
           "text": "Turkish (native), English (B2, working proficiency; TOEFL iBT 87)."
         }
-      ]
+      ],
+      "id": "skills"
     },
     {
       "title": "Contact",
@@ -168,7 +171,8 @@
             }
           ]
         }
-      ]
+      ],
+      "id": "contact"
     }
   ]
 }

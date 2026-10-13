@@ -5,3 +5,4 @@
 - 2026-10-13: Hosting Cloudflare (Workers statik, deploy GitHub push ile), adres `byazar.mr-brkyzr.workers.dev`, alan adı yok, bütçe sıfır.
 - 2026-10-13: Bölümler JSON içinde genel `sections` listesi; profil başına ayrı şablon yok.
 - 2026-10-13: Tasarım yönü değişti: sakin siyah-beyaz, sanat bordo / analist lacivert vurgu, 5×3 ızgara, tek sayfa kaydırma, zaman çizelgesi (kullanıcı isteği). Pop-art terk edildi.
+- 2026-10-13: Profil seçimi gerçek rota (ClientRouter ile yumuşak geçiş); amaç Geri düğmesi, paylaşım ve SEO. PDF CV yerelde üretilip commit'lenir (Cloudflare build'inde Chrome yok).

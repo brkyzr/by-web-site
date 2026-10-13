@@ -7,11 +7,15 @@
     "analistDesc": "Deneyim ve projeler",
     "home": "Ana sayfa",
     "all": "Aşağı kaydır",
-    "back": "Geri",
+    "back": "Ana ekran",
     "tagline": "Oyuncu & İş Analisti",
     "skip": "Ana içeriğe geç",
     "scroll": "Aşağı kaydır",
-    "top": "Başa dön"
+    "top": "Başa dön",
+    "descSanat": "Oyuncu ve ortak üretim tiyatrocusu. Tiyatro özgeçmişi ve portfolyo.",
+    "descAnalist": "İş analisti ve Scrum Master. Deneyim, projeler ve sertifikalar.",
+    "descHome": "Berkay Yazar: oyuncu ve iş analisti. Tiyatro portfolyosu ve iş analizi özgeçmişi.",
+    "cv": "PDF CV indir"
   },
   "en": {
     "pick": "Choose a profile",
@@ -21,10 +25,14 @@
     "analistDesc": "Experience and projects",
     "home": "Home",
     "all": "Scroll down",
-    "back": "Back",
+    "back": "Home",
     "tagline": "Actor & Business Analyst",
     "skip": "Skip to content",
     "scroll": "Scroll down",
-    "top": "Back to top"
+    "top": "Back to top",
+    "descSanat": "Actor and collaborative theatre-maker. Theatre résumé and portfolio.",
+    "descAnalist": "Business analyst and Scrum Master. Experience, projects and certificates.",
+    "descHome": "Berkay Yazar: actor and business analyst. Theatre portfolio and business analysis résumé.",
+    "cv": "Download CV (PDF)"
   }
 }

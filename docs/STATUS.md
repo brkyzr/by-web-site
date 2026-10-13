@@ -15,5 +15,7 @@
 - Tek sayfa: profil seçilince ızgara bölüm kutularına dönüşür, içerik altta açılır, tıklayınca yumuşak kayar. `/tr/sanat/`, `/en/analist/` aynı sayfayı o profil açık gösterir. Kaydırınca üstte ince bölüm barı.
 - Zaman çizelgesi: ≥2 tarihli maddesi olan bölümlerde ince çizgi + düğümler, düğüme gelince yanda detay (telefonda altta). Maddelerde `date` alanı (YYYY veya YYYY-MM), yeni → eski sıralanır. Madde `photo` alanı ile fotoğraf alır.
 - Kod: `src/components/{Landing,Face,Timeline}.astro`, `src/styles/landing.css`. Fontlar `public/fonts/` (Archivo).
-- Henüz push edilmedi, kullanıcı yerelde inceliyor. DESIGN.md ve bağımsız yeniden inceleme bekliyor.
-- Sıradaki: ATS PDF CV, gerçek fotoğraflar (`kaynak/foto/`).
+- Gerçek rotalar + Astro sayfa geçişi (ClientRouter): anahtar kutular bağlantı, Geri düğmesi/başlık/paylaşım düzgün, her rota yalnızca kendi profilini yükler. Meta: canonical, hreflang, OG, JSON-LD Person, sitemap.xml, robots.txt. Bölümlerin `id` alanı var (karolar slug ile bağlı, yanlışsa build düşer).
+- ATS PDF CV: `npm run cv` → `public/cv/berkay-yazar-cv-{sanat,analist}-{tr,en}.pdf` (yerelde Chrome ile üretilir, commit'lenir; içerik değişince yeniden çalıştır). Profil girişinde ve iletişim bölümünde "PDF CV indir" düğmesi.
+- Henüz push edilmedi.
+- Sıradaki: gerçek fotoğraflar/showreel (`kaynak/foto/`), "Öne çıkan / Tam krediler" ayrımı, og:image, DESIGN.md + bağımsız yeniden inceleme.
