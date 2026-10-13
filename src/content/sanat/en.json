@@ -1,8 +1,49 @@
 {
-  "name": "Ad Soyad",
-  "title": "Theatre Performer",
-  "about": "Örnek içerik / placeholder. Gerçek metin CV'lerden gelecek.",
+  "name": "Berkay Yazar",
+  "title": "Actor · Collaborative Theatre-Maker",
+  "about": "My artistic practice has developed inside small, independent theatre groups in Ankara, where limited resources shaped not only our aesthetics but also the way we work. In companies like Gri Şehir Tiyatrosu and Sisifos Sanat, I became an actor who also builds, organizes, coordinates and problem-solves, combining performance with the practical labour that makes it possible.",
   "sections": [
-    { "title": "Örnek bölüm", "items": [ { "title": "Örnek madde", "meta": "2024", "text": "Açıklama." } ] }
+    {
+      "title": "Selected Works",
+      "items": [
+        { "title": "Waiting for Waiting for Godot — Actor (Ester)", "meta": "Sisifos Sanat, 2025–Present", "text": "By Dave Hanson. A three-person meta-theatrical comedy about two actors endlessly waiting to rehearse Waiting for Godot. Alongside acting, I coordinated logistics and resources and designed an adaptable stage layout and technical rider for a touring-friendly setup with minimal equipment." },
+        { "title": "Kaktüslü Adam (The Man With The Cactus Plant) — Actor", "meta": "Sisifos Sanat, 2021 & 2023", "text": "Written and directed by Burak Efe Meyilli. An absurd play about unemployment and systemic pressure, awarded \"Best Playwright\" at the Direklerarası Audience Awards. Technical Lead for the 2021 premiere; performed the 2023 revival through a distinct physical score and grotesque character makeup." },
+        { "title": "Feryat (Bellow) — Lead Actor (Ceyhun)", "meta": "Short film, dir. Burak Efe Meyilli, 2021", "text": "An independent short film about a man's first day of losing his love and accepting his grief, balancing raw loss with an underlying absurdity." },
+        { "title": "Ah'lar Ağacı (The Tree of Ah's)", "meta": "Gri Şehir Tiyatrosu, 2023", "text": "A dance- and choreography-driven production adapted from Didem Madak's poetry book. Production and organization, lighting operation and set installation." },
+        { "title": "Art", "meta": "Sisifos Sanat, 2022–2023", "text": "Assistant director, lighting and sound operator, and part of the stage design team (a mobile six-panel structure that rotates into a triangle)." },
+        { "title": "The Beauty Queen of Leenane — Actor", "meta": "Gri Şehir Tiyatrosu, 2022–2023", "text": "The company's return to the stage after the pandemic and its most frequently performed production. Also responsible for installing key set components, including a working tap and plumbing system." },
+        { "title": "Dr. Jekyll & Mr. Hyde", "meta": "Gri Şehir Tiyatrosu, 2018–2020", "text": "The Turkish premiere. Ten distinct spaces created with four chairs, a coffee table, a trunk and a rotating door; sold-out audiences and touring before the pandemic ended the run." },
+        { "title": "Colonel Bird", "meta": "Gri Şehir Tiyatrosu, 2018–2019", "text": "The company's debut and first fully independent production." },
+        { "title": "Independent Productions — Creative & Production Roles", "meta": "Gri Şehir Tiyatrosu & Sisifos Sanat, 2018–Present", "text": "Acting, assistant directing, production support, organisational coordination, light and sound operation and backstage workflow. Co-founding member of both companies." }
+      ]
+    },
+    {
+      "title": "Training",
+      "items": [
+        { "title": "Story, Dramaturgy & Writing", "meta": "Beliz Güçbilmez, Jan–Jun 2025", "text": "Four-module laboratory on narrative structure, dramaturgical analysis, metaphor-based writing and re-writing (the \"Magnetic Field Method\")." },
+        { "title": "Meisner-based Acting", "meta": "Aras Kösedağ, May & Jul 2025", "text": "Listening, impulsive reaction, subtext and moment-to-moment presence through Meisner's repetition. Helped organise a follow-up workshop for Sisifos Sanat." },
+        { "title": "Laban Movement Analysis", "meta": "Ümit Erlim, Jun 2024", "text": "Effort actions, spatial orientation, weight–time–flow dynamics and embodied character work." },
+        { "title": "Directing & Acting Workshop", "meta": "Murat Daltaban, Jul 2025", "text": "Directing principles, actor–director communication, text interpretation and contemporary staging." },
+        { "title": "Producing for Theatre", "meta": "Özlem Daltaban, Jul 2025", "text": "Institutional identity, production planning, and international co-production models including touring and funding." },
+        { "title": "Ensemble-Based Devised Theatre", "meta": "Faysal Dakni, Aug 2025", "text": "Ensemble creation through le jeu, improvisation and physical theatre, generating original material without a predetermined script." },
+        { "title": "Storytelling with Physical Theatre", "meta": "Güray Dinçol, Sep 2025", "text": "Movement, silence, rhythm and physical play as narrative tools." },
+        { "title": "Michael Chekhov Technique", "meta": "Ulrich Meyer-Horsch, Oct 2025", "text": "Psycho-physical approach: imagination, breath, movement, body centres, improvisation and ensemble play." },
+        { "title": "Physical Theatre & Clown", "meta": "Yasin Yürekli, Nov 2025", "text": "Lecoq-inspired work on naivete, playfulness, failure-as-impulse and non-verbal comedy." },
+        { "title": "Mask & Body — Commedia dell'Arte", "meta": "Claudio de Maglio, Nov 2025", "text": "Foundational mask work on body–rhythm–gesture relationships and physical improvisation." }
+      ]
+    },
+    {
+      "title": "Skills & Languages",
+      "items": [
+        { "title": "Artistic practice", "meta": "", "text": "Actor and performer in independent theatre; collaborative creation; dramaturgical contribution in ensemble processes; rehearsal coordination and production workflow; light and sound operation; ongoing improv practice (long-form and short-form)." },
+        { "title": "Languages", "meta": "", "text": "Turkish (native), English (B2, working proficiency; TOEFL iBT 87)." }
+      ]
+    },
+    {
+      "title": "Contact",
+      "items": [
+        { "title": "Ankara, Turkey", "meta": "", "text": "Instagram: @brkyzr · @sisifosanat · @grisehirtiyatrosu" }
+      ]
+    }
   ]
 }

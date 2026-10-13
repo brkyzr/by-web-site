@@ -6,8 +6,8 @@ export const getStaticPaths = () => [{ params: { lang: 'tr' } }, { params: { lan
 const { lang } = Astro.params;
 const t = ui[lang];
 ---
-<Base lang={lang} title="Ad Soyad">
-  <h1>Ad Soyad</h1>
+<Base lang={lang} title="Berkay Yazar">
+  <h1>Berkay Yazar</h1>
   <p>{t.pick}</p>
   <ul>
     <li><a href={`/${lang}/sanat/`}>{t.sanat}</a>: {t.sanatDesc}</li>

@@ -1,8 +1,43 @@
 {
-  "name": "Ad Soyad",
-  "title": "Business Analyst",
-  "about": "Örnek içerik / placeholder. Gerçek metin CV'lerden gelecek.",
+  "name": "Berkay Yazar",
+  "title": "Business Analyst · Scrum Master",
+  "about": "Business Analyst with experience in insurance IT, working between stakeholders, developers and QA teams to keep delivery smooth. Background in Industrial Engineering and Business Administration, Scrum Master certified. I also work in independent theatre, which shapes how I think about coordination, limited resources and collective delivery.",
   "sections": [
-    { "title": "Örnek bölüm", "items": [ { "title": "Örnek madde", "meta": "2024", "text": "Açıklama." } ] }
+    {
+      "title": "Experience",
+      "items": [
+        { "title": "Business Analyst & Scrum Master — Innovance Consultancy / Allianz Turkey (outsourced)", "meta": "April 2024–Present", "text": "Member of the Business Development & Transformation team. Coordinating between stakeholders, developers and QA teams to ensure smooth delivery; leading Scrum ceremonies and ensuring effective application of Agile principles." },
+        { "title": "Business Analyst (Specialist) — Anadolu Insurance Company", "meta": "August 2021–March 2024", "text": "Worked on the IT side of motor insurance products (mainly TPL and Casco) as business analyst and implementation engineer: analysing and implementing new requirements, resolving production defects, and coordinating with customers, developers and testers. Tools: Jira, Confluence, Sourcetree, SQL (Oracle), IDIT, MS Excel." },
+        { "title": "Candidate Engineer — FNSS Defence Systems Inc.", "meta": "October 2019–August 2020", "text": "Quality Assurance and Business Excellence Department. Researched risk management and process management; took part in the development and testing of several systems under development." },
+        { "title": "Internships — FNSS Defence Systems Inc.; Nurol Makina Inc.", "meta": "2018–2019", "text": "" }
+      ]
+    },
+    {
+      "title": "Projects",
+      "items": [
+        { "title": "Multi-Team, Time-Window Team Routing — Graduation Project, Güven Hospital", "meta": "October 2019–June 2020", "text": "Carried out in Güven Hospital's Home Healthcare Unit with a project group under academic consultancy. Developed a specialised MIP model under specific constraints and a decision support system in Python with solver and GIS libraries and open-source APIs." }
+      ]
+    },
+    {
+      "title": "Education",
+      "items": [
+        { "title": "B.Sc. Industrial Engineering — Başkent University", "meta": "2016–2020", "text": "GPA 3.01/4. Theatre Society (Vice President, actor, assistant director); 104.2 RadyoBaşkent (anchor, producer); Sci-Fi, Fantasy & RPG Society (President)." },
+        { "title": "B.A. Business Administration — Anadolu University", "meta": "2017–2022", "text": "" }
+      ]
+    },
+    {
+      "title": "Skills, Certificates & Awards",
+      "items": [
+        { "title": "Skills", "meta": "", "text": "Jira, Confluence, SQL, Python, MS Office; team management, communication, presentation." },
+        { "title": "Certificates", "meta": "", "text": "Professional Scrum Master I (scrum.org, 2024); TOEFL iBT 87 (ETS, 2021); Introduction to Python Programming (Global AI Hub); Python, Pandas, Intro to SQL, Data Visualization (Kaggle)." },
+        { "title": "Awards", "meta": "", "text": "First place, 15th Poster Contest, Başkent University Industrial Engineering (June 2020); second place, Ostim Technopark Hackathon (February 2020)." }
+      ]
+    },
+    {
+      "title": "Contact",
+      "items": [
+        { "title": "Ankara, Turkey", "meta": "", "text": "LinkedIn: berkayyazar98" }
+      ]
+    }
   ]
 }
