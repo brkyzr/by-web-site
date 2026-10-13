@@ -50,6 +50,7 @@ const cv = mode === 'home' ? null : (() => {
   const href = `/cv/berkay-yazar-cv-${mode}-${lang}.pdf`;
   try { return { href, kb: Math.round(statSync(`public${href}`).size / 1024) }; } catch { return null; } // no PDF yet: no button
 })();
+const noindex = true; // ponytail: set false (and restore public/robots.txt) to open the site to search engines
 const profiles = mode === 'home' ? [] : [mode];
 const hasTimeline = (s) => s.items.filter((i) => i.date).length >= 2;
 const title = mode === 'home' ? 'Berkay Yazar' : `Berkay Yazar · ${data[mode].title}`;
@@ -73,6 +74,7 @@ const jsonLd = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={abs(url(lang, mode))} />
     <link rel="alternate" hreflang="tr" href={abs(url('tr', mode))} />
     <link rel="alternate" hreflang="en" href={abs(url('en', mode))} />

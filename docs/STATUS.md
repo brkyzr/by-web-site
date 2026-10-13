@@ -17,5 +17,5 @@
 - Kod: `src/components/{Landing,Face,Timeline}.astro`, `src/styles/landing.css`. Fontlar `public/fonts/` (Archivo).
 - Gerçek rotalar + Astro sayfa geçişi (ClientRouter): anahtar kutular bağlantı, Geri düğmesi/başlık/paylaşım düzgün, her rota yalnızca kendi profilini yükler. Meta: canonical, hreflang, OG, JSON-LD Person, sitemap.xml, robots.txt. Bölümlerin `id` alanı var (karolar slug ile bağlı, yanlışsa build düşer).
 - ATS PDF CV: `npm run cv` → `public/cv/berkay-yazar-cv-{sanat,analist}-{tr,en}.pdf` (yerelde Chrome ile üretilir, commit'lenir; içerik değişince yeniden çalıştır). Profil girişinde ve iletişim bölümünde "PDF CV indir" düğmesi.
-- Henüz push edilmedi.
+- Arama motoru indekslemesi KAPALI (robots.txt Disallow + meta noindex). Açmak için robots.txt içindeki yorumu uygula ve Landing.astro'da `noindex = false` yap.
 - Sıradaki: gerçek fotoğraflar/showreel (`kaynak/foto/`), "Öne çıkan / Tam krediler" ayrımı, og:image, DESIGN.md + bağımsız yeniden inceleme.

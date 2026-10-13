@@ -1,4 +1,7 @@
+# Indexing is OFF for now. To open: replace with
+#   User-agent: *
+#   Allow: /
+#   Sitemap: https://byazar.mr-brkyzr.workers.dev/sitemap.xml
+# and set noindex = false in src/components/Landing.astro.
 User-agent: *
-Allow: /
-
-Sitemap: https://byazar.mr-brkyzr.workers.dev/sitemap.xml
+Disallow: /
