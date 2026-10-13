@@ -129,7 +129,25 @@
         {
           "title": "Ankara, Türkiye",
           "meta": "",
-          "text": "E-posta: yazar.berkay98@gmail.com · Instagram: @brkyzr · @sisifosanat · @grisehirtiyatrosu"
+          "text": "",
+          "links": [
+            {
+              "label": "E-posta",
+              "url": "mailto:yazar.berkay98@gmail.com"
+            },
+            {
+              "label": "Instagram @brkyzr",
+              "url": "https://www.instagram.com/brkyzr/"
+            },
+            {
+              "label": "Instagram @sisifosanat",
+              "url": "https://www.instagram.com/sisifosanat/"
+            },
+            {
+              "label": "Instagram @grisehirtiyatrosu",
+              "url": "https://www.instagram.com/grisehirtiyatrosu/"
+            }
+          ]
         }
       ]
     }

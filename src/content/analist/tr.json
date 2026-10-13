@@ -18,7 +18,7 @@
         },
         {
           "title": "Aday Mühendis — FNSS Savunma Sistemleri A.Ş.",
-          "meta": "Ekim 2019–Ağustos 2020",
+          "meta": "Ekim 2019–Haziran 2020",
           "text": "Kalite Güvencesi ve İş Mükemmelliği Departmanı. Risk yönetimi ve süreç yönetimi üzerine araştırma; geliştirilmekte olan çeşitli sistemlerin geliştirme ve testlerinde görev aldım."
         },
         {
@@ -79,7 +79,17 @@
         {
           "title": "Ankara, Türkiye",
           "meta": "",
-          "text": "E-posta: yazar.berkay98@gmail.com · LinkedIn: berkayyazar98"
+          "text": "",
+          "links": [
+            {
+              "label": "E-posta",
+              "url": "mailto:yazar.berkay98@gmail.com"
+            },
+            {
+              "label": "LinkedIn",
+              "url": "https://www.linkedin.com/in/berkayyazar98/"
+            }
+          ]
         }
       ]
     }

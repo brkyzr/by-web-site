@@ -18,7 +18,7 @@
         },
         {
           "title": "Candidate Engineer — FNSS Defence Systems Inc.",
-          "meta": "October 2019–August 2020",
+          "meta": "October 2019–June 2020",
           "text": "Quality Assurance and Business Excellence Department. Researched risk management and process management; took part in the development and testing of several systems under development."
         },
         {
@@ -79,7 +79,17 @@
         {
           "title": "Ankara, Turkey",
           "meta": "",
-          "text": "Email: yazar.berkay98@gmail.com · LinkedIn: berkayyazar98"
+          "text": "",
+          "links": [
+            {
+              "label": "Email",
+              "url": "mailto:yazar.berkay98@gmail.com"
+            },
+            {
+              "label": "LinkedIn",
+              "url": "https://www.linkedin.com/in/berkayyazar98/"
+            }
+          ]
         }
       ]
     }

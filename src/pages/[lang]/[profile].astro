@@ -17,6 +17,7 @@ const { default: c } = await import(`../../content/${profile}/${lang}.json`);
         <div class="item">
           <strong>{i.title}</strong> <span class="meta">{i.meta}</span>
           <div>{i.text}</div>
+          {i.links && <div>{i.links.map((l, n) => <>{n > 0 && ' · '}<a href={l.url}>{l.label}</a></>)}</div>}
         </div>
       ))}
     </section>
