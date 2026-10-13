@@ -1,0 +1,16 @@
+---
+import Base from '../../layouts/Base.astro';
+import ui from '../../content/ui.json';
+
+export const getStaticPaths = () => [{ params: { lang: 'tr' } }, { params: { lang: 'en' } }];
+const { lang } = Astro.params;
+const t = ui[lang];
+---
+<Base lang={lang} title="Ad Soyad">
+  <h1>Ad Soyad</h1>
+  <p>{t.pick}</p>
+  <ul>
+    <li><a href={`/${lang}/sanat/`}>{t.sanat}</a>: {t.sanatDesc}</li>
+    <li><a href={`/${lang}/analist/`}>{t.analist}</a>: {t.analistDesc}</li>
+  </ul>
+</Base>

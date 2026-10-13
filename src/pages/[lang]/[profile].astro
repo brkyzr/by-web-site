@@ -1,0 +1,24 @@
+---
+import Base from '../../layouts/Base.astro';
+
+export const getStaticPaths = () =>
+  ['tr', 'en'].flatMap((lang) => ['sanat', 'analist'].map((profile) => ({ params: { lang, profile } })));
+const { lang, profile } = Astro.params;
+const { default: c } = await import(`../../content/${profile}/${lang}.json`);
+---
+<Base lang={lang} title={`${c.name} · ${c.title}`} path={`${profile}/`}>
+  <h1>{c.name}</h1>
+  <p class="meta">{c.title}</p>
+  <p>{c.about}</p>
+  {c.sections.map((s) => (
+    <section>
+      <h2>{s.title}</h2>
+      {s.items.map((i) => (
+        <div class="item">
+          <strong>{i.title}</strong> <span class="meta">{i.meta}</span>
+          <div>{i.text}</div>
+        </div>
+      ))}
+    </section>
+  ))}
+</Base>

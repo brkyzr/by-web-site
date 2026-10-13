@@ -1,0 +1,8 @@
+{
+  "name": "Ad Soyad",
+  "title": "Tiyatro Sanatçısı",
+  "about": "Örnek içerik / placeholder. Gerçek metin CV'lerden gelecek.",
+  "sections": [
+    { "title": "Örnek bölüm", "items": [ { "title": "Örnek madde", "meta": "2024", "text": "Açıklama." } ] }
+  ]
+}
