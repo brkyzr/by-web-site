@@ -6,3 +6,4 @@
 - 2026-10-13: Bölümler JSON içinde genel `sections` listesi; profil başına ayrı şablon yok.
 - 2026-10-13: Tasarım yönü değişti: sakin siyah-beyaz, sanat bordo / analist lacivert vurgu, 5×3 ızgara, tek sayfa kaydırma, zaman çizelgesi (kullanıcı isteği). Pop-art terk edildi.
 - 2026-10-13: Profil seçimi gerçek rota (ClientRouter ile yumuşak geçiş); amaç Geri düğmesi, paylaşım ve SEO. PDF CV yerelde üretilip commit'lenir (Cloudflare build'inde Chrome yok).
+- 2026-10-14: Yayın wrangler ile (wrangler.jsonc repoda); Cloudflare Git auto-deploy çalışana kadar elle `wrangler deploy`.

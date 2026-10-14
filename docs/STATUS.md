@@ -19,3 +19,7 @@
 - ATS PDF CV: `npm run cv` → `public/cv/berkay-yazar-cv-{sanat,analist}-{tr,en}.pdf` (yerelde Chrome ile üretilir, commit'lenir; içerik değişince yeniden çalıştır). Profil girişinde ve iletişim bölümünde "PDF CV indir" düğmesi.
 - Arama motoru indekslemesi KAPALI (robots.txt Disallow + meta noindex). Açmak için robots.txt içindeki yorumu uygula ve Landing.astro'da `noindex = false` yap.
 - Sıradaki: gerçek fotoğraflar/showreel (`kaynak/foto/`), "Öne çıkan / Tam krediler" ayrımı, og:image, DESIGN.md + bağımsız yeniden inceleme.
+
+## Yayın (2026-10-14)
+- Canlı: https://byazar.mr-brkyzr.workers.dev/tr/ . Cloudflare Git otomatik deploy'u push'lara yanıt vermedi; yayın elle: `npm run build && npx wrangler deploy` (wrangler bu makinede mr.brkyzr hesabıyla girişli, `wrangler.jsonc` repoda: assets ./dist, 404-page).
+- Git entegrasyonunu düzeltmek için panelde Settings → Builds: build command `npm run build`, deploy command `npx wrangler deploy`, branch main.
