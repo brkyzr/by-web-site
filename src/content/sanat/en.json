@@ -11,6 +11,7 @@
         {
           "id": "waiting-for-waiting-for-godot",
           "featured": true,
+          "ongoing": true,
           "date": "2025-01",
           "categories": [
             "acting",
@@ -148,13 +149,131 @@
             "Actor"
           ],
           "text": "The company's debut and first fully independent production."
+        },
+        {
+          "id": "kirik-pot-dogaclama",
+          "date": "2026-05",
+          "featured": true,
+          "ongoing": true,
+          "categories": [
+            "improvisation"
+          ],
+          "title": "Kırık Pot Doğaçlama",
+          "meta": "May 2026–Present · Fade Stage · Short-form improvisation",
+          "text": "Short-form improvisation work and stage performances with Kırık Pot Doğaçlama.",
+          "links": [
+            {
+              "label": "Instagram @kirikpotdogaclama",
+              "url": "https://www.instagram.com/kirikpotdogaclama/"
+            }
+          ]
+        },
+        {
+          "id": "dasdas-dogaclama-festivali",
+          "date": "2026-09",
+          "featured": true,
+          "categories": [
+            "improvisation"
+          ],
+          "title": "DasDas Improvisation Festival",
+          "meta": "September 2026 · DasDas, Istanbul · Cosa Sahne",
+          "text": "Improvisational theatre performance with Cosa Sahne at the DasDas Improvisation Festival."
+        },
+        {
+          "id": "lysistrata-nin-elmasi",
+          "date": "2026",
+          "categories": [
+            "technical",
+            "freelance"
+          ],
+          "title": "Lysistrata'nın Elması",
+          "company": "Aksi Tiyatro",
+          "meta": "Aksi Tiyatro · 2026–Present",
+          "ongoing": true
+        },
+        {
+          "id": "domuz",
+          "date": "2026",
+          "categories": [
+            "technical",
+            "freelance"
+          ],
+          "title": "Domuz",
+          "company": "Farabi Sahnesi",
+          "meta": "Farabi Sahnesi · 2026–Present",
+          "ongoing": true
+        },
+        {
+          "id": "rumuz-goncagul",
+          "date": "2026",
+          "categories": [
+            "technical",
+            "freelance"
+          ],
+          "title": "Rumuz Goncagül",
+          "company": "MasKumpanya",
+          "meta": "MasKumpanya · 2026–Present",
+          "ongoing": true
+        },
+        {
+          "id": "yapay-zamanlar",
+          "date": "2026",
+          "categories": [
+            "technical",
+            "freelance"
+          ],
+          "title": "Yapay Zamanlar",
+          "company": "Bedi Sanat",
+          "meta": "Bedi Sanat · 2026–Present",
+          "ongoing": true,
+          "roles": [
+            "Stage manager (reji direktörü)"
+          ]
+        },
+        {
+          "id": "heybeden-gercekustu-cocuklar",
+          "date": "2026",
+          "categories": [
+            "technical",
+            "freelance"
+          ],
+          "title": "Heybeden Gerçeküstü Çocuklar",
+          "company": "Bedi Sanat",
+          "meta": "Bedi Sanat · 2026–Present",
+          "ongoing": true,
+          "roles": [
+            "Stage manager (reji direktörü)"
+          ]
+        },
+        {
+          "id": "kocasini-pisiren-kadinlar",
+          "date": "2026-06",
+          "categories": [
+            "technical",
+            "freelance"
+          ],
+          "title": "Kocasını Pişiren Kadınlar",
+          "company": "Aksi Tiyatro",
+          "meta": "Aksi Tiyatro · June 2026"
+        },
+        {
+          "id": "ispirtizma",
+          "date": "2026-03",
+          "categories": [
+            "technical",
+            "freelance"
+          ],
+          "title": "İspirtizma",
+          "company": "Mustafa Budak Lab",
+          "meta": "Mustafa Budak Lab · March–May 2026"
         }
       ],
       "filters": [
         "acting",
         "improvisation",
         "production",
-        "technical"
+        "technical",
+        "freelance"
       ]
     },
     {
@@ -204,39 +323,6 @@
       ]
     },
     {
-      "id": "improvisation",
-      "title": "Improvisation",
-      "nav": "Improvisation",
-      "items": [
-        {
-          "id": "kirik-pot-dogaclama",
-          "date": "2026-05",
-          "categories": [
-            "improvisation"
-          ],
-          "title": "Kırık Pot Doğaçlama",
-          "meta": "May–June 2026 · Fade Stage · Short-form improvisation",
-          "text": "Short-form improvisation work and stage performances with Kırık Pot Doğaçlama.",
-          "links": [
-            {
-              "label": "Instagram @kirikpotdogaclama",
-              "url": "https://www.instagram.com/kirikpotdogaclama/"
-            }
-          ]
-        },
-        {
-          "id": "dasdas-dogaclama-festivali",
-          "date": "2026-09",
-          "categories": [
-            "improvisation"
-          ],
-          "title": "DasDas Improvisation Festival",
-          "meta": "September 2026 · DasDas, Istanbul · Cosa Sahne",
-          "text": "Improvisational theatre performance with Cosa Sahne at the DasDas Improvisation Festival."
-        }
-      ]
-    },
-    {
       "id": "production",
       "title": "Technical Theatre & Production",
       "nav": "Technical Theatre",
@@ -255,71 +341,7 @@
             "Technical riders",
             "Touring adaptations"
           ],
-          "text": "Technical and production work carried out as a founding member of Gri Şehir Tiyatrosu and Sisifos Sanat, kept separate from the freelance credits below."
-        }
-      ],
-      "subsections": [
-        {
-          "id": "freelance",
-          "title": "Freelance Technical Theatre",
-          "text": "I work freelance in lighting realization, lighting operation and sound operation.",
-          "items": [
-            {
-              "id": "lysistrata-nin-elmasi",
-              "title": "Lysistrata'nın Elması",
-              "company": "Aksi Tiyatro",
-              "meta": "2026–Present",
-              "ongoing": true
-            },
-            {
-              "id": "domuz",
-              "title": "Domuz",
-              "company": "Farabi Sahnesi",
-              "meta": "2026–Present",
-              "ongoing": true
-            },
-            {
-              "id": "rumuz-goncagul",
-              "title": "Rumuz Goncagül",
-              "company": "MasKumpanya",
-              "meta": "2026–Present",
-              "ongoing": true
-            },
-            {
-              "id": "yapay-zamanlar",
-              "title": "Yapay Zamanlar",
-              "company": "Bedi Sanat",
-              "meta": "2026–Present",
-              "ongoing": true,
-              "roles": [
-                "Stage manager (reji direktörü)"
-              ]
-            },
-            {
-              "id": "heybeden-gercekustu-cocuklar",
-              "title": "Heybeden Gerçeküstü Çocuklar",
-              "company": "Bedi Sanat",
-              "meta": "2026–Present",
-              "ongoing": true,
-              "roles": [
-                "Stage manager (reji direktörü)"
-              ]
-            },
-            {
-              "id": "kocasini-pisiren-kadinlar",
-              "title": "Kocasını Pişiren Kadınlar",
-              "company": "Aksi Tiyatro",
-              "meta": "June 2026",
-              "ongoing": false
-            },
-            {
-              "id": "ispirtizma",
-              "title": "İspirtizma",
-              "company": "Mustafa Budak Lab",
-              "meta": "March–May 2026",
-              "ongoing": false
-            }
-          ]
+          "text": "Technical and production work carried out as a founding member of Gri Şehir Tiyatrosu and Sisifos Sanat, Freelance productions are listed under Selected Works with the “Freelance Technical Theatre” filter. I work freelance in lighting and sound realization and operation."
         }
       ]
     },

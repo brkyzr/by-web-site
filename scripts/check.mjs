@@ -12,7 +12,7 @@ for (const p of ['sanat', 'analist']) {
   if (JSON.stringify(ids(tr)) !== JSON.stringify(ids(en))) errors.push(`${p}: section ids differ between tr and en`);
   for (const [l, d] of [['tr', tr], ['en', en]]) {
     const seen = new Set();
-    const itemsOf = (s) => [...s.items, ...(s.subsections ?? []).flatMap((x) => x.items)];
+    const itemsOf = (s) => s.items;
     for (const s of d.sections) {
       for (const i of itemsOf(s)) {
         const where = `${p}/${l}/${s.id}/${i.id ?? i.title}`;
@@ -29,9 +29,9 @@ for (const p of ['sanat', 'analist']) {
   }
   // same item ids per section in both languages
   tr.sections.forEach((s, n) => {
-    const a = [...s.items, ...(s.subsections ?? []).flatMap((x) => x.items)].map((i) => i.id).join();
+    const a = s.items.map((i) => i.id).join();
     const e = en.sections[n];
-    const b = [...e.items, ...(e.subsections ?? []).flatMap((x) => x.items)].map((i) => i.id).join();
+    const b = e.items.map((i) => i.id).join();
     if (a !== b) errors.push(`${p}/${s.id}: item ids differ between tr and en`);
   });
 }

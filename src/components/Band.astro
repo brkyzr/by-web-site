@@ -1,7 +1,7 @@
 ---
 import Timeline from './Timeline.astro';
 // One content section. Dated items form a timeline, undated ones a compact list below it.
-// Optional on the section: filters (category ids), undatedTitle, subsections (freelance credits list).
+// Optional on the section: filters (category ids), undatedTitle.
 const { s, p, t, last } = Astro.props;
 const dated = s.items.filter((i) => i.date);
 const undated = s.items.filter((i) => !i.date);
@@ -37,30 +37,6 @@ const cats = t.cats;
         ))}
       </div>
     )}
-    {(s.subsections ?? []).map((sub) => (
-      <div class="sub" id={`${p}-${sub.id}`}>
-        <h3 class="subh">{sub.title}</h3>
-        {sub.text && <p class="sub-text">{sub.text}</p>}
-        {[[true, t.ongoing], [false, t.completed]].map(([flag, label]) => {
-          const rows = sub.items.filter((i) => !!i.ongoing === flag);
-          return rows.length > 0 && (
-            <>
-              <h4 class="grp">{label}</h4>
-              <ul class="credits">
-                {rows.map((i) => (
-                  <li>
-                    <span class="c-title">{i.title}</span>
-                    <span class="c-co">{i.company}</span>
-                    <span class="c-when">{i.meta}</span>
-                    {i.roles?.length > 0 && <span class="c-role">{i.roles.join(', ')}</span>}
-                  </li>
-                ))}
-              </ul>
-            </>
-          );
-        })}
-      </div>
-    ))}
     <slot />
   </div>
 </section>

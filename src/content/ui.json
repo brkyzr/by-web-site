@@ -18,8 +18,6 @@
     "cv": "PDF CV indir",
     "filterAll": "Tümü",
     "filterLabel": "Kategori",
-    "ongoing": "Devam Edenler",
-    "completed": "Tamamlananlar",
     "practice": "Uygulama",
     "trainingLabel": "Eğitim",
     "cats": {
@@ -29,7 +27,8 @@
       "technical": "Teknik Tiyatro",
       "film": "Kısa film",
       "physical": "Fiziksel Tiyatro",
-      "creation": "Yazı ve Yönetmenlik"
+      "creation": "Yazı ve Yönetmenlik",
+      "freelance": "Freelance Teknik Tiyatro"
     }
   },
   "en": {
@@ -51,8 +50,6 @@
     "cv": "Download CV (PDF)",
     "filterAll": "All",
     "filterLabel": "Category",
-    "ongoing": "Ongoing",
-    "completed": "Completed",
     "practice": "Practice",
     "trainingLabel": "Training",
     "cats": {
@@ -62,7 +59,8 @@
       "technical": "Technical Theatre",
       "film": "Short film",
       "physical": "Physical Theatre",
-      "creation": "Writing & Directing"
+      "creation": "Writing & Directing",
+      "freelance": "Freelance Technical Theatre"
     }
   }
 }

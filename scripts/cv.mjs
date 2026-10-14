@@ -23,9 +23,9 @@ h2 { font-size: 10.5pt; margin: 8pt 0 3pt; padding-bottom: 2pt; border-bottom: 1
 .grp { font-weight: bold; margin: 6pt 0 2pt; }
 .line { margin: 0 0 2pt; }`;
 
-// The theatre CV must fit one page: per-section mode ('featured' works only, 'compact' = titles/dates/roles, 'credits' = subsections only, 'languages').
+// The theatre CV must fit one page: per-section mode ('featured' works only plus one freelance line, 'compact' = titles/dates/roles, 'languages').
 // Sections not listed are left out. Analist keeps the full CV.
-const ONE_PAGE = { sanat: { works: 'featured', companies: 'compact', improvisation: 'compact', production: 'credits', facilitation: 'compact', skills: 'languages' } };
+const ONE_PAGE = { sanat: { works: 'featured', companies: 'compact', facilitation: 'compact', skills: 'languages' } };
 
 for (const profile of ['sanat', 'analist']) {
   for (const lang of ['tr', 'en']) {
@@ -40,33 +40,23 @@ for (const profile of ['sanat', 'analist']) {
         !compact && i.text ? `<p>${esc(i.text)}</p>` : ''
       }${i.practice ? `<p>${esc(ui.practice)}: ${esc(i.practice)}</p>` : ''}${i.training ? `<p>${esc(ui.trainingLabel)}: ${esc(i.training)}</p>` : ''}</div>`;
     };
-    const credits = (sub, short) =>
-      short
-        ? `<h3 class="subh">${esc(sub.title)}</h3><p class="line">${esc(sub.items.map((i) => `${i.title} (${i.company}${i.roles?.length ? ', ' + i.roles.join(', ') : ''}, ${i.meta})`).join('; '))}</p>`
-        :       `<h3 class="subh">${esc(sub.title)}</h3>${sub.text && !short ? `<p>${esc(sub.text)}</p>` : ''}` +
-      [[true, ui.ongoing], [false, ui.completed]]
-        .map(([flag, label]) => {
-          const rows = sub.items.filter((i) => !!i.ongoing === flag);
-          return rows.length ? `<p class="grp">${esc(label)}</p>` + rows.map((i) => `<p class="line">${esc(`${i.title} — ${i.company}, ${i.meta}${i.roles?.length ? ` (${i.roles.join(', ')})` : ''}`)}</p>`).join('') : '';
-        })
-        .join('');
     const body = d.sections
       .filter((s) => s.id !== 'contact')
       .map((s) => {
         const mode = ONE_PAGE[profile] ? ONE_PAGE[profile][s.id] : 'full';
         if (!mode) return '';
-        const sub = (s.subsections ?? []).map((x) => credits(x, mode !== 'full')).join('');
-        if (mode === 'credits') return `<h2>${esc(s.title)}</h2>${sub}`;
         if (mode === 'languages') { const l = s.items.find((i) => i.id === 'skill-languages'); return `<p class="line" style="margin-top:8pt"><b>${esc(l.title)}:</b> ${esc(l.text)}</p>`; }
-        const base = mode === 'featured' ? s.items.filter((i) => i.featured) : mode === 'languages' ? s.items.filter((i) => i.id === 'skill-languages') : s.items;
+        const base = mode === 'featured' ? s.items.filter((i) => i.featured && !i.categories?.includes('freelance')) : mode === 'languages' ? s.items.filter((i) => i.id === 'skill-languages') : s.items;
         const dated = base.filter((i) => i.date);
         const timeline = dated.length >= 2;
-        const sorted = timeline ? [...dated].sort((a, b) => key(b.date).localeCompare(key(a.date))) : [];
+        const sorted = timeline ? [...dated].sort((a, b) => Number(!!b.ongoing) - Number(!!a.ongoing) || key(b.date).localeCompare(key(a.date))) : [];
         const undated = timeline ? base.filter((i) => !i.date) : base;
+        const fl = mode === 'featured' ? s.items.filter((i) => i.categories?.includes('freelance')) : [];
+        const freelance = fl.length ? `<h3 class="subh">${esc(ui.cats.freelance)}</h3><p class="line">${esc(fl.map((i) => `${i.title} (${i.meta}${i.roles?.length ? ', ' + i.roles.join(', ') : ''})`).join('; '))}</p>` : '';
         const compact = s.id === 'training' || mode === 'compact' || mode === 'featured'; // long lists: titles, dates and roles only
         return `<h2>${esc(s.title)}</h2>${sorted.map((i) => item(i, compact)).join('')}${
           timeline && undated.length && s.undatedTitle ? `<p class="grp">${esc(s.undatedTitle)}</p>` : ''
-        }${undated.map((i) => item(i, compact)).join('')}${sub}`;
+        }${undated.map((i) => item(i, compact)).join('')}${freelance}`;
       })
       .join('');
     const html = `<!doctype html><html lang="${lang}"><meta charset="utf-8"><title>${esc(d.name)} - ${esc(d.title)}</title><style>${css}</style><body>

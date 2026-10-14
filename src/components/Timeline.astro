@@ -3,7 +3,8 @@
 // Items must be dated. Optional per item: categories (filterable), roles, links, photo.
 const { items, id, cats = {} } = Astro.props;
 const key = (d) => (d.length === 4 ? d + '-00' : d);
-const sorted = [...items].sort((a, b) => key(b.date).localeCompare(key(a.date))); // stable: ties keep file order
+// ongoing first, then newest; stable, so ties keep file order
+const sorted = [...items].sort((a, b) => Number(!!b.ongoing) - Number(!!a.ongoing) || key(b.date).localeCompare(key(a.date)));
 ---
 <div class="tl" style={`--n:${sorted.length};--n1:${sorted.length + 1}`}>
   <ol>

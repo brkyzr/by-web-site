@@ -131,17 +131,6 @@ body[data-mode='sanat'] .profile[data-p='sanat'], body[data-mode='analist'] .pro
 .roles li { font-size: 0.9rem; color: var(--ink); }
 .roles li::before { content: ''; display: inline-block; width: 5px; height: 5px; margin-right: 0.5rem; background: var(--accent); vertical-align: middle; }
 .row strong { color: var(--ink); font-weight: 500; }
-.sub { margin-top: clamp(3rem, 6vw, 5rem); }
-.sub .subh { margin-top: 0; }
-.sub-text { margin: 0 0 1.5rem; max-width: 62ch; color: var(--mute); text-wrap: pretty; }
-.grp { margin: 2rem 0 0.4rem; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.02em; color: var(--accent); }
-.credits { list-style: none; margin: 0; padding: 0; }
-.credits li { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1.3fr) minmax(0, 1fr); gap: 0.2rem 1.5rem; padding: 0.9rem 0; border-top: 1px solid var(--line); }
-.credits li:last-child { border-bottom: 1px solid var(--line); }
-.c-title { font-weight: 700; letter-spacing: -0.02em; }
-.c-co, .c-when, .c-role { color: var(--mute); }
-.c-role { grid-column: 1 / -1; font-size: 0.9rem; }
-@media (max-width: 700px) { .credits li { grid-template-columns: 1fr; } }
 .band { padding: clamp(4rem, 9vw, 7rem) 0; background: var(--band); border-top: 1px solid var(--line); }
 .band:nth-of-type(even) { background: var(--paper); }
 .band[data-last='true'] { background: var(--accent); color: #fff; border: 0; --mute: rgba(255, 255, 255, 0.78); --line: rgba(255, 255, 255, 0.35); }
