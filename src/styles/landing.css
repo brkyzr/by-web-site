@@ -82,6 +82,8 @@ a, button { color: inherit; font: inherit; }
 .arrow { position: absolute; right: 9%; bottom: 9%; width: clamp(0.9rem, calc(1.6cqw * var(--k)), 1.6rem); height: auto; fill: none; stroke: currentColor; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.3s var(--ease); }
 .key .arrow { right: 9%; bottom: 9%; }
 .face:hover .arrow { transform: translateX(5px); }
+a.face:active { transform: scale(0.98); transition: transform 0.08s; }
+.cv-btn:active { transform: translateY(1px); }
 .down .arrow { transform: rotate(90deg); }
 .down:hover .arrow { transform: rotate(90deg) translateX(5px); }
 
@@ -114,7 +116,7 @@ body[data-mode='sanat'] .profile[data-p='sanat'], body[data-mode='analist'] .pro
 .intro { padding: clamp(5rem, 12vw, 9rem) 0 clamp(4rem, 9vw, 7rem); background: var(--paper); }
 .intro .name { margin: 0; font-size: clamp(2.6rem, 8vw, 7rem); letter-spacing: -0.045em; line-height: 0.95; font-weight: 700; }
 .role { margin: 1rem 0 0; font-size: clamp(1.1rem, 2.2vw, 1.6rem); color: var(--accent); font-weight: 500; }
-.about { margin: 2.5rem 0 0; max-width: 62ch; font-size: 1.1rem; color: var(--mute); }
+.about { text-wrap: pretty; margin: 2.5rem 0 0; max-width: 62ch; font-size: 1.1rem; color: var(--mute); }
 
 .band { padding: clamp(4rem, 9vw, 7rem) 0; background: var(--band); border-top: 1px solid var(--line); }
 .band:nth-of-type(even) { background: var(--paper); }
@@ -125,7 +127,7 @@ body[data-mode='sanat'] .profile[data-p='sanat'], body[data-mode='analist'] .pro
 
 .plain { display: grid; gap: 2rem; max-width: 70ch; }
 .row h3 { margin: 0; font-size: 1.15rem; letter-spacing: -0.02em; }
-.row p { margin: 0.3rem 0 0; color: var(--mute); }
+.row p { margin: 0.3rem 0 0; color: var(--mute); text-wrap: pretty; }
 .row .when { font-size: 0.9rem; }
 .links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
 .links a { color: inherit; font-size: 1.15rem; text-underline-offset: 4px; display: inline-flex; align-items: center; min-height: 44px; }
@@ -153,7 +155,7 @@ li[data-on] .tt { font-weight: 700; }
 .detail { grid-column: 2; grid-row: 1 / span var(--n); align-self: start; position: sticky; top: 5.5rem; visibility: hidden; opacity: 0; transform: translateY(6px); transition: opacity 0.3s var(--ease), transform 0.4s var(--ease), visibility 0s 0.3s; }
 li[data-on] .detail { visibility: visible; opacity: 1; transform: none; transition-delay: 0s; }
 .detail h3 { margin: 1.2rem 0 0; font-size: 1.5rem; letter-spacing: -0.03em; line-height: 1.15; }
-.detail p { margin: 0.6rem 0 0; color: var(--mute); max-width: 56ch; }
+.detail p { margin: 0.6rem 0 0; color: var(--mute); max-width: 56ch; text-wrap: pretty; }
 .detail .when { color: var(--accent); font-weight: 500; }
 .shot { aspect-ratio: 16 / 9; background: var(--stone); display: grid; place-items: center; overflow: hidden; }
 .shot svg { width: 18%; fill: none; stroke: #8f8c83; stroke-width: 2.4; }
@@ -168,6 +170,13 @@ li[data-on] .detail { visibility: visible; opacity: 1; transform: none; transiti
   li[data-on] .detail { display: block; }
   .shot { aspect-ratio: 16 / 10; }
 }
+
+/* ---------- 404 ---------- */
+.nf { min-height: 100svh; display: grid; align-content: center; justify-items: start; gap: 1rem; width: min(1180px, 100% - 2rem); margin: 0 auto; }
+.nf h1 { margin: 0; font-size: clamp(5rem, 20vw, 14rem); letter-spacing: -0.06em; line-height: 0.9; }
+.nf p { margin: 0; color: var(--mute); font-size: 1.2rem; }
+.nf-links { display: flex; gap: 1.5rem; }
+.nf-links a { display: inline-flex; align-items: center; min-height: 44px; color: var(--ink); font-weight: 700; text-underline-offset: 4px; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
