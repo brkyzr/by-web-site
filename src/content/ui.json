@@ -1,9 +1,9 @@
 {
   "tr": {
     "pick": "Profil seç",
-    "sanat": "Sanatçı",
+    "sanat": "Tiyatro & Performans",
     "analist": "İş Analisti",
-    "sanatDesc": "Tiyatro özgeçmişi ve portfolyo",
+    "sanatDesc": "Oyunculuk, doğaçlama ve tiyatro üretimi",
     "analistDesc": "Deneyim ve projeler",
     "home": "Ana sayfa",
     "all": "Aşağı kaydır",
@@ -12,16 +12,31 @@
     "skip": "Ana içeriğe geç",
     "scroll": "Aşağı kaydır",
     "top": "Başa dön",
-    "descSanat": "Oyuncu ve ortak üretim tiyatrocusu. Tiyatro özgeçmişi ve portfolyo.",
+    "descSanat": "Berkay Yazar: oyuncu, doğaçlamacı ve tiyatro yapımcısı. Oyunculuk, doğaçlama ve tiyatro üretimi portfolyosu.",
     "descAnalist": "İş analisti ve Scrum Master. Deneyim, projeler ve sertifikalar.",
     "descHome": "Berkay Yazar: oyuncu ve iş analisti. Tiyatro portfolyosu ve iş analizi özgeçmişi.",
-    "cv": "PDF CV indir"
+    "cv": "PDF CV indir",
+    "filterAll": "Tümü",
+    "filterLabel": "Kategori",
+    "ongoing": "Devam Edenler",
+    "completed": "Tamamlananlar",
+    "practice": "Uygulama",
+    "trainingLabel": "Eğitim",
+    "cats": {
+      "acting": "Oyunculuk",
+      "improvisation": "Doğaçlama",
+      "production": "Prodüksiyon",
+      "technical": "Teknik Tiyatro",
+      "film": "Kısa film",
+      "physical": "Fiziksel Tiyatro",
+      "creation": "Yazı ve Yönetmenlik"
+    }
   },
   "en": {
     "pick": "Choose a profile",
-    "sanat": "Performer",
+    "sanat": "Theatre & Performance",
     "analist": "Business Analyst",
-    "sanatDesc": "Theatre résumé and portfolio",
+    "sanatDesc": "Acting, improvisation and theatre-making",
     "analistDesc": "Experience and projects",
     "home": "Home",
     "all": "Scroll down",
@@ -30,9 +45,24 @@
     "skip": "Skip to content",
     "scroll": "Scroll down",
     "top": "Back to top",
-    "descSanat": "Actor and collaborative theatre-maker. Theatre résumé and portfolio.",
+    "descSanat": "Berkay Yazar: actor, improviser and theatre-maker. Portfolio of acting, improvisation and theatre-making.",
     "descAnalist": "Business analyst and Scrum Master. Experience, projects and certificates.",
     "descHome": "Berkay Yazar: actor and business analyst. Theatre portfolio and business analysis résumé.",
-    "cv": "Download CV (PDF)"
+    "cv": "Download CV (PDF)",
+    "filterAll": "All",
+    "filterLabel": "Category",
+    "ongoing": "Ongoing",
+    "completed": "Completed",
+    "practice": "Practice",
+    "trainingLabel": "Training",
+    "cats": {
+      "acting": "Acting",
+      "improvisation": "Improvisation",
+      "production": "Production",
+      "technical": "Technical Theatre",
+      "film": "Short film",
+      "physical": "Physical Theatre",
+      "creation": "Writing & Directing"
+    }
   }
 }

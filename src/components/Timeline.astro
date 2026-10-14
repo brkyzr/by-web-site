@@ -1,24 +1,28 @@
 ---
 // Vertical hairline with nodes; the active node's detail panel sits beside it (stacked inline on phones).
-const { items } = Astro.props;
+// Items must be dated. Optional per item: categories (filterable), roles, links, photo.
+const { items, id, cats = {} } = Astro.props;
 const key = (d) => (d.length === 4 ? d + '-00' : d);
 const sorted = [...items].sort((a, b) => key(b.date).localeCompare(key(a.date))); // stable: ties keep file order
 ---
-<div class="tl" style={`--n:${sorted.length}`}>
+<div class="tl" style={`--n:${sorted.length};--n1:${sorted.length + 1}`}>
   <ol>
     {sorted.map((it, i) => (
-      <li>
-        <button type="button" class="node" aria-expanded="false" aria-controls={`d-${Astro.props.id}-${i}`}>
+      <li data-cat={(it.categories ?? []).join(' ')}>
+        <button type="button" class="node" aria-expanded="false" aria-controls={`d-${id}-${i}`}>
           <span class="yr">{it.date.slice(0, 4)}</span>
           <span class="tt">{it.title}</span>
         </button>
-        <div class="detail" id={`d-${Astro.props.id}-${i}`}>
+        <div class="detail" id={`d-${id}-${i}`}>
           <div class="shot">
-            {it.photo ? <img src={it.photo} alt="" loading="lazy" /> : <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M10 78l24-30 18 22 14-16 24 24M10 20h80v60H10z" /></svg>}
+            {it.photo ? <img src={it.photo} alt={it.alt ?? ''} loading="lazy" /> : <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M10 78l24-30 18 22 14-16 24 24M10 20h80v60H10z" /></svg>}
           </div>
           <h3>{it.title}</h3>
           {it.meta && <p class="when">{it.meta}</p>}
+          {it.categories?.some((c) => cats[c]) && <p class="tags">{it.categories.filter((c) => cats[c]).map((c) => cats[c]).join(' · ')}</p>}
+          {it.roles?.length > 0 && <ul class="roles">{it.roles.map((r) => <li>{r}</li>)}</ul>}
           {it.text && <p>{it.text}</p>}
+          {it.links && <p class="links">{it.links.map((l) => <a href={l.url} rel="noopener">{l.label}</a>)}</p>}
         </div>
       </li>
     ))}

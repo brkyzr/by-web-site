@@ -23,3 +23,10 @@
 ## Yayın (2026-10-14)
 - Canlı: https://byazar.mr-brkyzr.workers.dev/tr/ . Cloudflare Git otomatik deploy'u push'lara yanıt vermedi; yayın elle: `npm run build && npx wrangler deploy` (wrangler bu makinede mr.brkyzr hesabıyla girişli, `wrangler.jsonc` repoda: assets ./dist, 404-page).
 - Git entegrasyonunu düzeltmek için panelde Settings → Builds: build command `npm run build`, deploy command `npx wrangler deploy`, branch main.
+
+## Tiyatro & Performans içerik revizyonu (2026-10-14)
+- Sanat profili yeniden yazıldı: bölümler works, companies, improvisation, production (+ Freelance Teknik Tiyatro alt başlığı), facilitation, training, skills, contact. Ana ekranda etiket "Tiyatro & Performans" / "Theatre & Performance" (iç anahtar ve rota `sanat` aynı).
+- Seçilmiş Çalışmalar ve Eğitimler kategori filtreli; yalnızca kullanılan kategoriler görünür. Tarihsiz eğitimler "Diğer Eğitimler" listesinde.
+- `npm run check` (JSON eşliği, kimlik, tarih, kategori) eklendi: geçiyor. `docs/CONTENT.md` şemayı anlatır. Eksikler `docs/MISSING.md`.
+- PDF CV'ler yeniden üretildi, dördü de 1 sayfa. Sanat CV'si yalnızca seçilmiş çalışmalar + topluluklar, doğaçlama, freelance, atölye, diller (`featured: true` işaretli çalışmalar). İçerik seçimi MISSING'de.
+- Henüz push/yayın yapılmadı.

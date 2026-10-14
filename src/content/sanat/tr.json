@@ -1,149 +1,577 @@
 {
   "name": "Berkay Yazar",
-  "title": "Oyuncu · Ortak Üretim Tiyatrocusu",
-  "about": "Sanatsal pratiğim Ankara'daki küçük, bağımsız tiyatro topluluklarında gelişti; kısıtlı imkânlar yalnızca estetiğimizi değil çalışma biçimimizi de şekillendirdi. Gri Şehir Tiyatrosu ve Sisifos Sanat'ta oynayan, aynı zamanda inşa eden, organize eden, koordine eden ve sorun çözen biri oldum; performansı onu mümkün kılan pratik emekle birleştiriyorum.",
+  "title": "Oyuncu · Doğaçlamacı · Tiyatro Yapımcısı",
+  "about": "2018'den beri Ankara'da bağımsız tiyatro topluluklarında çalışıyorum. Gri Şehir Tiyatrosu ve Sisifos Sanat'ın kurucu üyesiyim; oyunculuğun yanında prodüksiyon, organizasyon ve ışık, ses operasyonu gibi teknik işleri üstleniyorum. Fiziksel tiyatro ve doğaçlama çalışıyor, Cosa Sahne ile doğaçlama performansları ve atölye organizasyonu yapıyorum. Kısıtlı imkânlarla çalışmak, performansı onu mümkün kılan pratik emekle birlikte düşünmemi sağladı.",
   "sections": [
     {
+      "id": "works",
       "title": "Seçilmiş Çalışmalar",
+      "nav": "Seçilmiş Çalışmalar",
       "items": [
         {
-          "title": "Waiting for Waiting for Godot — Oyuncu (Ester)",
+          "id": "waiting-for-waiting-for-godot",
+          "featured": true,
+          "date": "2025-01",
+          "categories": [
+            "acting",
+            "production"
+          ],
+          "title": "Godot'yu Beklerken'i Beklerken — Oyuncu (Ester)",
           "meta": "Sisifos Sanat, 2025–Devam ediyor",
-          "text": "Dave Hanson'ın yazdığı, Godot'yu Beklerken'i prova etmeyi sonsuza dek bekleyen iki oyuncuyu anlatan üç kişilik meta-tiyatral komedi. Oyunculuğun yanında lojistik ve kaynakları koordine ettim; asgari ekipmanla turneye uygun, uyarlanabilir bir sahne düzeni ve teknik rider tasarladım.",
-          "date": "2025-01"
+          "roles": [
+            "Oyuncu (Ester)",
+            "Prodüksiyon ve teknik koordinasyon"
+          ],
+          "text": "Dave Hanson'ın yazdığı, Godot'yu Beklerken'i prova etmeyi sonsuza dek bekleyen iki oyuncuyu anlatan üç kişilik meta-tiyatral komedi. Oyunculuğun yanında lojistik ve kaynakları koordine ettim; asgari ekipmanla turneye uygun, uyarlanabilir bir sahne düzeni ve teknik rider tasarladım."
         },
         {
+          "id": "kaktuslu-adam-2023",
+          "featured": true,
+          "date": "2023",
+          "categories": [
+            "acting"
+          ],
           "title": "Kaktüslü Adam — Oyuncu",
-          "meta": "Sisifos Sanat, 2021 ve 2023",
-          "text": "Burak Efe Meyilli'nin yazıp yönettiği, işsizlik ve sistemsel baskıyı ele alan absürt oyun; Direklerarası Seyirci Ödülleri'nde \"En İyi Oyun Yazarı\" ödülü aldı. 2021 prömiyerinde teknik sorumlu, 2023 yeniden sahnelemesinde oyuncuydum; metni özgün bir fiziksel partitür ve grotesk karakter makyajıyla yorumladım.",
-          "date": "2023"
+          "meta": "Sisifos Sanat, 2023",
+          "roles": [
+            "Oyuncu (Kaktüslü Adam)"
+          ],
+          "text": "Burak Efe Meyilli'nin yazıp yönettiği, işsizlik ve sistemsel baskıyı grotesk bir bakışla ele alan absürt oyun. 2023'teki yeniden sahnelemede oyuncu olarak yer aldım; metni özgün bir fiziksel partitür ve grotesk karakter makyajıyla yorumladım. Oyunun metni, Direklerarası Seyirci Ödülleri'nde \"En İyi Oyun Yazarı\" ödülünü aldı."
         },
         {
+          "id": "kaktuslu-adam-2021",
+          "date": "2021",
+          "categories": [
+            "production",
+            "technical"
+          ],
+          "title": "Kaktüslü Adam — Teknik Sorumlu",
+          "meta": "Sisifos Sanat, 2021",
+          "roles": [
+            "Teknik sorumlu",
+            "Prodüksiyon"
+          ],
+          "text": "Yapımın 2021'deki ilk sahnelemesinde (prömiyer) teknik sorumlu olarak çalıştım; prodüksiyon ve teknik operasyondan sorumluydum. Oyunun metni, Direklerarası Seyirci Ödülleri'nde \"En İyi Oyun Yazarı\" ödülünü aldı."
+        },
+        {
+          "id": "feryat",
+          "featured": true,
+          "date": "2021",
+          "categories": [
+            "acting",
+            "film"
+          ],
           "title": "Feryat — Başrol (Ceyhun)",
           "meta": "Kısa film, yön. Burak Efe Meyilli, 2021",
+          "roles": [
+            "Başrol (Ceyhun)"
+          ],
           "text": "Bir adamın sevgisini kaybettiği ilk günü ve yasını kabullenişini anlatan bağımsız kısa film; ham kayıp duygusunu altta yatan bir absürtlükle dengeler.",
-          "date": "2021"
+          "links": [
+            {
+              "label": "YouTube'da izle",
+              "url": "https://www.youtube.com/watch?v=vgVGYs7sKK4&t=55s"
+            }
+          ]
         },
         {
+          "id": "ahlar-agaci",
+          "date": "2023",
+          "categories": [
+            "production",
+            "technical"
+          ],
           "title": "Ah'lar Ağacı",
           "meta": "Gri Şehir Tiyatrosu, 2023",
-          "text": "Didem Madak'ın aynı adlı şiir kitabından uyarlanan, dans ve koreografi odaklı sahne yapımı. Prodüksiyon ve organizasyon, ışık operatörlüğü ve dekor kurulumu.",
-          "date": "2023"
+          "roles": [
+            "Teknik operasyon (ışık)",
+            "Prodüksiyon ve sahne kurulumu"
+          ],
+          "text": "Didem Madak'ın aynı adlı şiir kitabından uyarlanan, dans ve koreografi odaklı sahne yapımı. Prodüksiyon ve organizasyon, ışık operatörlüğü ve dekor kurulumu."
         },
         {
-          "title": "Art",
+          "id": "art",
+          "featured": true,
+          "date": "2022",
+          "categories": [
+            "production",
+            "technical"
+          ],
+          "title": "Sanat",
           "meta": "Sisifos Sanat, 2022–2023",
-          "text": "Yönetmen yardımcısı, ışık ve ses operatörü ve sahne tasarım ekibinin üyesi (üçgen forma dönüşebilen, altı panelli hareketli yapı).",
-          "date": "2022"
+          "roles": [
+            "Yönetmen yardımcısı",
+            "Işık ve ses operatörlüğü",
+            "Sahne tasarımı katkısı"
+          ],
+          "text": "Yönetmen yardımcısı, ışık ve ses operatörü ve sahne tasarım ekibinin üyesi (üçgen forma dönüşebilen, altı panelli hareketli yapı)."
         },
         {
-          "title": "The Beauty Queen of Leenane — Oyuncu",
+          "id": "leenane",
+          "featured": true,
+          "date": "2022",
+          "categories": [
+            "acting",
+            "production"
+          ],
+          "title": "Leenane'in Güzellik Kraliçesi — Oyuncu",
           "meta": "Gri Şehir Tiyatrosu, 2022–2023",
-          "text": "Topluluğun pandemi sonrası sahneye dönüşü ve repertuvarının en çok oynanan yapımı. Çalışan musluk ve tesisat sistemi dahil kritik dekor parçalarının kurulumundan da sorumluydum.",
-          "date": "2022"
+          "roles": [
+            "Oyuncu",
+            "Sahne kurulumu"
+          ],
+          "text": "Topluluğun pandemi sonrası sahneye dönüşü ve repertuvarının en çok oynanan yapımı. Çalışan musluk ve tesisat sistemi dahil kritik dekor parçalarının kurulumundan da sorumluydum."
         },
         {
-          "title": "Dr. Jekyll & Mr. Hyde",
+          "id": "jekyll-hyde",
+          "featured": true,
+          "date": "2019",
+          "categories": [
+            "acting"
+          ],
+          "title": "Dr. Jekyll ile Bay Hyde — Oyuncu",
           "meta": "Gri Şehir Tiyatrosu, 2018–2020",
-          "text": "Türkiye prömiyeri. Dört sandalye, bir sehpa, bir sandık ve döner bir kapıyla on farklı mekân yaratıldı; pandemi oyunu bitirene kadar biletler tükendi ve turne yapıldı.",
-          "date": "2019"
+          "roles": [
+            "Oyuncu"
+          ],
+          "text": "Türkiye prömiyeri. Dört sandalye, bir sehpa, bir sandık ve döner bir kapıyla on farklı mekân yaratıldı; pandemi oyunu bitirene kadar biletler tükendi ve turne yapıldı."
         },
         {
-          "title": "Colonel Bird",
+          "id": "colonel-bird",
+          "date": "2018",
+          "categories": [
+            "acting"
+          ],
+          "title": "Albay Kuş — Oyuncu",
           "meta": "Gri Şehir Tiyatrosu, 2018–2019",
-          "text": "Topluluğun ilk yapımı ve tamamen bağımsız ilk projesi.",
-          "date": "2018"
-        },
-        {
-          "title": "Bağımsız Yapımlar — Yaratıcı ve Prodüksiyon Rolleri",
-          "meta": "Gri Şehir Tiyatrosu ve Sisifos Sanat, 2018–Devam ediyor",
-          "text": "Oyunculuk, yönetmen yardımcılığı, prodüksiyon desteği, organizasyon koordinasyonu, ışık ve ses operasyonu ve sahne arkası iş akışı. İki topluluğun da kurucu üyesi.",
-          "date": "2018"
+          "roles": [
+            "Oyuncu"
+          ],
+          "text": "Topluluğun ilk yapımı ve tamamen bağımsız ilk projesi."
         }
       ],
-      "id": "works"
+      "filters": [
+        "acting",
+        "improvisation",
+        "production",
+        "technical"
+      ]
     },
     {
-      "title": "Eğitimler",
+      "id": "companies",
+      "title": "Tiyatro Toplulukları",
+      "nav": "Topluluklar",
       "items": [
         {
+          "id": "gri-sehir-tiyatrosu",
+          "title": "Gri Şehir Tiyatrosu",
+          "meta": "2018–2023",
+          "roles": [
+            "Kurucu üye",
+            "Oyunculuk",
+            "Prodüksiyon koordinasyonu",
+            "Teknik ve sahne arkası çalışmalar"
+          ],
+          "text": "Albay Kuş, Dr. Jekyll ile Bay Hyde, Leenane'in Güzellik Kraliçesi ve Ah'lar Ağacı yapımlarında yer aldım."
+        },
+        {
+          "id": "sisifos-sanat",
+          "title": "Sisifos Sanat",
+          "meta": "2021–2026",
+          "roles": [
+            "Kurucu üye",
+            "Oyunculuk",
+            "Yapımcılık",
+            "Bütçe ve kaynak koordinasyonu",
+            "Festival ve mekân organizasyonu",
+            "Teknik operasyon"
+          ],
+          "text": "Kaktüslü Adam, Sanat ve Godot'yu Beklerken'i Beklerken yapımlarında yer aldım."
+        },
+        {
+          "id": "cosa-sahne",
+          "title": "Cosa Sahne",
+          "meta": "2026–Devam ediyor",
+          "roles": [
+            "Tiyatro atölyesi organizasyonu",
+            "Doğaçlama",
+            "Performans organizasyonu",
+            "Eğitmen ve katılımcı koordinasyonu",
+            "Prova ve mekân operasyonları"
+          ],
+          "text": "Doğaçlama performansları ve tiyatro atölyeleri."
+        }
+      ]
+    },
+    {
+      "id": "improvisation",
+      "title": "Doğaçlama Tiyatro",
+      "nav": "Doğaçlama",
+      "items": [
+        {
+          "id": "kirik-pot-dogaclama",
+          "date": "2026-05",
+          "categories": [
+            "improvisation"
+          ],
+          "title": "Kırık Pot Doğaçlama",
+          "meta": "Mayıs–Haziran 2026 · Fade Stage · Kısa form doğaçlama",
+          "text": "Kırık Pot Doğaçlama ile kısa form doğaçlama çalışmaları ve sahne performansları.",
+          "links": [
+            {
+              "label": "Instagram @kirikpotdogaclama",
+              "url": "https://www.instagram.com/kirikpotdogaclama/"
+            }
+          ]
+        },
+        {
+          "id": "dasdas-dogaclama-festivali",
+          "date": "2026-09",
+          "categories": [
+            "improvisation"
+          ],
+          "title": "DasDas Doğaçlama Festivali",
+          "meta": "Eylül 2026 · DasDas, İstanbul · Cosa Sahne",
+          "text": "Cosa Sahne ekibiyle DasDas Doğaçlama Festivali kapsamında doğaçlama tiyatro performansı."
+        }
+      ]
+    },
+    {
+      "id": "production",
+      "title": "Teknik Tiyatro ve Prodüksiyon",
+      "nav": "Teknik Tiyatro",
+      "items": [
+        {
+          "id": "technical-practice",
+          "title": "Teknik tiyatro ve prodüksiyon pratiği",
+          "roles": [
+            "Işık operatörlüğü",
+            "Ses operatörlüğü",
+            "Işık uygulama",
+            "Teknik kurulum",
+            "Sahne kurulumu",
+            "Prodüksiyon koordinasyonu",
+            "Festival teknik gereksinimleri",
+            "Teknik rider hazırlama",
+            "Turneye uygun uyarlamalar"
+          ],
+          "text": "Gri Şehir Tiyatrosu ve Sisifos Sanat'ta kurucu üye olarak yürüttüğüm teknik ve prodüksiyon işleri, aşağıdaki serbest çalışmalardan ayrı tutulmuştur."
+        }
+      ],
+      "subsections": [
+        {
+          "id": "freelance",
+          "title": "Freelance Teknik Tiyatro",
+          "text": "Işık ve ses uygulama ve operatörlüğü alanlarında freelance çalışıyorum.",
+          "items": [
+            {
+              "id": "lysistrata-nin-elmasi",
+              "title": "Lysistrata'nın Elması",
+              "company": "Aksi Tiyatro",
+              "meta": "2026–Devam ediyor",
+              "ongoing": true
+            },
+            {
+              "id": "domuz",
+              "title": "Domuz",
+              "company": "Farabi Sahnesi",
+              "meta": "2026–Devam ediyor",
+              "ongoing": true
+            },
+            {
+              "id": "rumuz-goncagul",
+              "title": "Rumuz Goncagül",
+              "company": "MasKumpanya",
+              "meta": "2026–Devam ediyor",
+              "ongoing": true
+            },
+            {
+              "id": "yapay-zamanlar",
+              "title": "Yapay Zamanlar",
+              "company": "Bedi Sanat",
+              "meta": "2026–Devam ediyor",
+              "ongoing": true,
+              "roles": [
+                "Reji direktörü"
+              ]
+            },
+            {
+              "id": "heybeden-gercekustu-cocuklar",
+              "title": "Heybeden Gerçeküstü Çocuklar",
+              "company": "Bedi Sanat",
+              "meta": "2026–Devam ediyor",
+              "ongoing": true,
+              "roles": [
+                "Reji direktörü"
+              ]
+            },
+            {
+              "id": "kocasini-pisiren-kadinlar",
+              "title": "Kocasını Pişiren Kadınlar",
+              "company": "Aksi Tiyatro",
+              "meta": "Haziran 2026",
+              "ongoing": false
+            },
+            {
+              "id": "ispirtizma",
+              "title": "İspirtizma",
+              "company": "Mustafa Budak Lab",
+              "meta": "Mart–Mayıs 2026",
+              "ongoing": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "facilitation",
+      "title": "Atölye ve Eğitim Çalışmaları",
+      "nav": "Atölyeler",
+      "items": [
+        {
+          "id": "cosa-sahne-atolyesi",
+          "date": "2026-07",
+          "title": "Cosa Sahne: Drama, Doğaçlama ve Tiyatro Atölyesi",
+          "meta": "Temmuz–Eylül 2026 · Cosa Sahne · Sekiz haftalık program · Oyunculuk teknikleri ve tiyatro",
+          "roles": [
+            "Eğitmen",
+            "Yürütücü",
+            "Asistan",
+            "Organizatör"
+          ],
+          "text": "Grup tiyatrosu ve doğaçlama egzersizleri, oyunculuk ve sahne çalışması."
+        }
+      ]
+    },
+    {
+      "id": "training",
+      "title": "Eğitimler",
+      "nav": "Eğitimler",
+      "items": [
+        {
+          "id": "story-dramaturgy-writing",
+          "date": "2025-01",
+          "categories": [
+            "creation"
+          ],
           "title": "Hikâye, Dramaturji ve Yazı",
           "meta": "Beliz Güçbilmez, Ocak–Haziran 2025",
-          "text": "Anlatı yapısı, dramaturjik analiz, metafor temelli yazım ve yeniden yazım (\"Manyetik Alan Yöntemi\") üzerine dört modüllük laboratuvar.",
-          "date": "2025-01"
+          "text": "Anlatı yapısı, dramaturjik analiz, metafor temelli yazım ve yeniden yazım (\"Manyetik Alan Yöntemi\") üzerine dört modüllük laboratuvar."
         },
         {
+          "id": "meisner",
+          "date": "2025-05",
+          "categories": [
+            "acting"
+          ],
           "title": "Meisner Temelli Oyunculuk",
           "meta": "Aras Kösedağ, Mayıs ve Temmuz 2025",
-          "text": "Meisner'ın tekrar tekniğiyle dinleme, dürtüsel tepki, alt metin ve an'a bağlı varlık. Sisifos Sanat için devam atölyesinin organizasyonuna yardım ettim.",
-          "date": "2025-05"
+          "text": "Meisner'ın tekrar tekniğiyle dinleme, dürtüsel tepki, alt metin ve an'a bağlı varlık. Sisifos Sanat için devam atölyesinin organizasyonuna yardım ettim."
         },
         {
+          "id": "laban",
+          "date": "2024-06",
+          "categories": [
+            "physical"
+          ],
           "title": "Laban Hareket Analizi",
           "meta": "Ümit Erlim, Haziran 2024",
-          "text": "Efor eylemleri, mekânsal yönelim, ağırlık–zaman–akış dinamikleri ve bedensel karakter çalışması.",
-          "date": "2024-06"
+          "text": "Efor eylemleri, mekânsal yönelim, ağırlık–zaman–akış dinamikleri ve bedensel karakter çalışması."
         },
         {
+          "id": "directing-acting-workshop",
+          "date": "2025-07",
+          "categories": [
+            "creation"
+          ],
           "title": "Yönetmenlik ve Oyunculuk Atölyesi",
           "meta": "Murat Daltaban, Temmuz 2025",
-          "text": "Yönetmenlik ilkeleri, oyuncu–yönetmen iletişimi, metin yorumu ve çağdaş sahneleme yaklaşımları.",
-          "date": "2025-07"
+          "text": "Yönetmenlik ilkeleri, oyuncu–yönetmen iletişimi, metin yorumu ve çağdaş sahneleme yaklaşımları."
         },
         {
+          "id": "producing-for-theatre",
+          "date": "2025-07",
+          "categories": [
+            "production"
+          ],
           "title": "Tiyatro için Prodüksiyon",
           "meta": "Özlem Daltaban, Temmuz 2025",
-          "text": "Kurumsal kimlik, prodüksiyon planlama ve turne ile fonlamayı kapsayan uluslararası ortak yapım modelleri.",
-          "date": "2025-07"
+          "text": "Kurumsal kimlik, prodüksiyon planlama ve turne ile fonlamayı kapsayan uluslararası ortak yapım modelleri."
         },
         {
+          "id": "ensemble-devised-theatre",
+          "date": "2025-08",
+          "categories": [
+            "physical"
+          ],
           "title": "Topluluk Temelli Devised Tiyatro",
           "meta": "Faysal Dakni, Ağustos 2025",
-          "text": "Le jeu, doğaçlama ve fiziksel tiyatro ile önceden belirlenmiş bir metin olmadan özgün malzeme üretmeye dair yoğun çalışma.",
-          "date": "2025-08"
+          "text": "Le jeu, doğaçlama ve fiziksel tiyatro ile önceden belirlenmiş bir metin olmadan özgün malzeme üretmeye dair yoğun çalışma."
         },
         {
+          "id": "storytelling-physical-theatre",
+          "date": "2025-09",
+          "categories": [
+            "physical"
+          ],
           "title": "Fiziksel Tiyatro ile Hikâye Anlatımı",
           "meta": "Güray Dinçol, Eylül 2025",
-          "text": "Hareket, sessizlik, ritim ve fiziksel oyunun anlatı aracı olarak keşfi.",
-          "date": "2025-09"
+          "text": "Hareket, sessizlik, ritim ve fiziksel oyunun anlatı aracı olarak keşfi."
         },
         {
+          "id": "michael-chekhov",
+          "date": "2025-10",
+          "categories": [
+            "acting"
+          ],
           "title": "Michael Çehov Tekniği",
           "meta": "Ulrich Meyer-Horsch, Ekim 2025",
-          "text": "Psiko-fiziksel yaklaşım: hayal gücü, nefes, hareket, beden merkezleri, doğaçlama ve topluluk oyunu.",
-          "date": "2025-10"
+          "text": "Psiko-fiziksel yaklaşım: hayal gücü, nefes, hareket, beden merkezleri, doğaçlama ve topluluk oyunu."
         },
         {
+          "id": "physical-theatre-clown",
+          "date": "2025-11",
+          "categories": [
+            "physical"
+          ],
           "title": "Fiziksel Tiyatro ve Palyaço",
           "meta": "Yasin Yürekli, Kasım 2025",
-          "text": "Saflık, oyunsallık, dürtü olarak başarısızlık ve sözsüz komedi üzerine Lecoq'tan esinli çalışma.",
-          "date": "2025-11"
+          "text": "Saflık, oyunsallık, dürtü olarak başarısızlık ve sözsüz komedi üzerine Lecoq'tan esinli çalışma."
         },
         {
+          "id": "mask-commedia",
+          "date": "2025-11",
+          "categories": [
+            "physical"
+          ],
           "title": "Maske ve Beden — Commedia dell'Arte",
           "meta": "Claudio de Maglio, Kasım 2025",
-          "text": "Beden–ritim–jest ilişkisi ve fiziksel doğaçlama üzerine temel maske çalışması.",
-          "date": "2025-11"
-        }
-      ],
-      "id": "training"
-    },
-    {
-      "title": "Beceriler ve Diller",
-      "items": [
-        {
-          "title": "Sanatsal pratik",
-          "meta": "",
-          "text": "Bağımsız tiyatroda oyuncu ve performans sanatçısı; ortak üretim; topluluk süreçlerinde dramaturjik katkı; prova koordinasyonu ve prodüksiyon iş akışı; ışık ve ses operasyonu; devam eden doğaçlama pratiği (uzun ve kısa form)."
+          "text": "Beden–ritim–jest ilişkisi ve fiziksel doğaçlama üzerine temel maske çalışması."
         },
         {
-          "title": "Diller",
-          "meta": "",
-          "text": "Türkçe (ana dil), İngilizce (B2, çalışma düzeyi; TOEFL iBT 87)."
+          "id": "hale-spolin",
+          "categories": [
+            "improvisation"
+          ],
+          "title": "Spolin Temelli Doğaçlama",
+          "meta": "Jason Hale"
+        },
+        {
+          "id": "eskicioglu-mime",
+          "categories": [
+            "physical"
+          ],
+          "title": "Jest, Mim ve Pantomim",
+          "meta": "Tuğba Eskicioğlu"
+        },
+        {
+          "id": "sarikaya-viewpoints",
+          "categories": [
+            "physical"
+          ],
+          "title": "Viewpoints",
+          "meta": "Pelin Sarıkaya"
+        },
+        {
+          "id": "glass-physical-ensemble",
+          "categories": [
+            "physical"
+          ],
+          "title": "Fiziksel Tiyatro ve Topluluk Çalışması",
+          "meta": "David Glass"
+        },
+        {
+          "id": "hunter-physical-performance",
+          "categories": [
+            "physical"
+          ],
+          "title": "Fiziksel Performans",
+          "meta": "Paul Hunter"
+        },
+        {
+          "id": "meindl-self-tape",
+          "categories": [
+            "acting"
+          ],
+          "title": "Kamera Önü Oyunculuk (Self-tape)",
+          "meta": "Anthony Meindl"
+        },
+        {
+          "id": "letailleur-acting",
+          "categories": [
+            "acting"
+          ],
+          "title": "Oyunculuk",
+          "meta": "Erica Letailleur"
+        },
+        {
+          "id": "tuncer-acting",
+          "categories": [
+            "acting"
+          ],
+          "title": "Tiyatro / Oyunculuk",
+          "meta": "Kubilay QB Tunçer"
         }
       ],
-      "id": "skills"
+      "filters": [
+        "acting",
+        "improvisation",
+        "physical",
+        "creation",
+        "production"
+      ],
+      "undatedTitle": "Diğer Eğitimler"
+    },
+    {
+      "id": "skills",
+      "title": "Beceriler ve Diller",
+      "nav": "Beceriler",
+      "items": [
+        {
+          "id": "skill-acting",
+          "title": "Oyunculuk",
+          "practice": "Bağımsız tiyatro yapımlarında ve bir kısa filmde oyunculuk.",
+          "training": "Meisner temelli oyunculuk, Michael Çehov tekniği, kamera önü oyunculuk (self-tape)."
+        },
+        {
+          "id": "skill-improvisation",
+          "title": "Doğaçlama",
+          "practice": "Uzun ve kısa form doğaçlama pratiği; kısa form sahne performansları.",
+          "training": "Spolin temelli doğaçlama."
+        },
+        {
+          "id": "skill-physical",
+          "title": "Fiziksel Tiyatro",
+          "training": "Laban hareket analizi, Lecoq esinli fiziksel tiyatro ve palyaço, maske ve beden (Commedia dell'Arte), Viewpoints, jest ve mim, fiziksel performans."
+        },
+        {
+          "id": "skill-collaborative",
+          "title": "Ortak Üretim",
+          "practice": "Küçük bağımsız topluluklarda ortak üretim; topluluk süreçlerinde dramaturjik katkı.",
+          "training": "Topluluk temelli devised tiyatro; hikâye, dramaturji ve yazı."
+        },
+        {
+          "id": "skill-technical",
+          "title": "Teknik Tiyatro",
+          "practice": "Işık ve ses operatörlüğü, ışık uygulama, teknik ve sahne kurulumu, teknik rider hazırlama."
+        },
+        {
+          "id": "skill-production",
+          "title": "Tiyatro Prodüksiyonu",
+          "practice": "Prova koordinasyonu ve prodüksiyon iş akışı; bütçe ve kaynak koordinasyonu; festival ve mekân organizasyonu; bilet satışı ve gişe süreçleri için geliştirdiğim özel tablo sistemi.",
+          "training": "Tiyatro için prodüksiyon (uluslararası ortak yapım modelleri)."
+        },
+        {
+          "id": "skill-facilitation",
+          "title": "Atölye Yürütme",
+          "practice": "Cosa Sahne atölyesinin organizasyonu ve yürütülmesi; Sisifos Sanat için devam atölyesinin organizasyonuna destek."
+        },
+        {
+          "id": "skill-languages",
+          "title": "Diller",
+          "text": "Türkçe (ana dil), İngilizce (B2, çalışma düzeyi; TOEFL iBT 87)."
+        }
+      ]
     },
     {
       "title": "İletişim",
@@ -172,7 +600,8 @@
           ]
         }
       ],
-      "id": "contact"
+      "id": "contact",
+      "nav": "İletişim"
     }
   ]
 }

@@ -1,149 +1,577 @@
 {
   "name": "Berkay Yazar",
-  "title": "Actor · Collaborative Theatre-Maker",
-  "about": "My artistic practice has developed inside small, independent theatre groups in Ankara, where limited resources shaped not only our aesthetics but also the way we work. In companies like Gri Şehir Tiyatrosu and Sisifos Sanat, I became an actor who also builds, organizes, coordinates and problem-solves, combining performance with the practical labour that makes it possible.",
+  "title": "Actor · Improviser · Theatre-Maker",
+  "about": "I have worked in independent theatre in Ankara since 2018. I am a founding member of Gri Şehir Tiyatrosu and Sisifos Sanat, where alongside acting I take on production, organisation and technical work such as lighting and sound operation. I practise physical theatre and improvisation, and work with Cosa Sahne on improvisation performances and workshop organisation. Working with limited resources has taught me to think of performance together with the practical labour that makes it possible.",
   "sections": [
     {
+      "id": "works",
       "title": "Selected Works",
+      "nav": "Selected Works",
       "items": [
         {
+          "id": "waiting-for-waiting-for-godot",
+          "featured": true,
+          "date": "2025-01",
+          "categories": [
+            "acting",
+            "production"
+          ],
           "title": "Waiting for Waiting for Godot — Actor (Ester)",
           "meta": "Sisifos Sanat, 2025–Present",
-          "text": "By Dave Hanson. A three-person meta-theatrical comedy about two actors endlessly waiting to rehearse Waiting for Godot. Alongside acting, I coordinated logistics and resources and designed an adaptable stage layout and technical rider for a touring-friendly setup with minimal equipment.",
-          "date": "2025-01"
+          "roles": [
+            "Actor (Ester)",
+            "Production and technical coordination"
+          ],
+          "text": "By Dave Hanson. A three-person meta-theatrical comedy about two actors endlessly waiting to rehearse Waiting for Godot. Alongside acting, I coordinated logistics and resources and designed an adaptable stage layout and technical rider for a touring-friendly setup with minimal equipment."
         },
         {
+          "id": "kaktuslu-adam-2023",
+          "featured": true,
+          "date": "2023",
+          "categories": [
+            "acting"
+          ],
           "title": "Kaktüslü Adam (The Man With The Cactus Plant) — Actor",
-          "meta": "Sisifos Sanat, 2021 & 2023",
-          "text": "Written and directed by Burak Efe Meyilli. An absurd play about unemployment and systemic pressure, awarded \"Best Playwright\" at the Direklerarası Audience Awards. Technical Lead for the 2021 premiere; performed the 2023 revival through a distinct physical score and grotesque character makeup.",
-          "date": "2023"
+          "meta": "Sisifos Sanat, 2023",
+          "roles": [
+            "Actor (Kaktüslü Adam)"
+          ],
+          "text": "Written and directed by Burak Efe Meyilli, an absurd play about unemployment and systemic pressure seen through a grotesque lens. I performed in the 2023 revival, interpreting the text through a distinct physical score and grotesque character makeup. The play's text received the \"Best Playwright\" award at the Direklerarası Audience Awards."
         },
         {
+          "id": "kaktuslu-adam-2021",
+          "date": "2021",
+          "categories": [
+            "production",
+            "technical"
+          ],
+          "title": "Kaktüslü Adam (The Man With The Cactus Plant) — Technical Lead",
+          "meta": "Sisifos Sanat, 2021",
+          "roles": [
+            "Technical lead",
+            "Production"
+          ],
+          "text": "Technical lead for the production's original 2021 staging, responsible for production and technical operations. The play's text received the \"Best Playwright\" award at the Direklerarası Audience Awards."
+        },
+        {
+          "id": "feryat",
+          "featured": true,
+          "date": "2021",
+          "categories": [
+            "acting",
+            "film"
+          ],
           "title": "Feryat (Bellow) — Lead Actor (Ceyhun)",
           "meta": "Short film, dir. Burak Efe Meyilli, 2021",
+          "roles": [
+            "Lead actor (Ceyhun)"
+          ],
           "text": "An independent short film about a man's first day of losing his love and accepting his grief, balancing raw loss with an underlying absurdity.",
-          "date": "2021"
+          "links": [
+            {
+              "label": "Watch on YouTube",
+              "url": "https://www.youtube.com/watch?v=vgVGYs7sKK4&t=55s"
+            }
+          ]
         },
         {
+          "id": "ahlar-agaci",
+          "date": "2023",
+          "categories": [
+            "production",
+            "technical"
+          ],
           "title": "Ah'lar Ağacı (The Tree of Ah's)",
           "meta": "Gri Şehir Tiyatrosu, 2023",
-          "text": "A dance- and choreography-driven production adapted from Didem Madak's poetry book. Production and organization, lighting operation and set installation.",
-          "date": "2023"
+          "roles": [
+            "Technical operation (lighting)",
+            "Production and stage setup"
+          ],
+          "text": "A dance- and choreography-driven production adapted from Didem Madak's poetry book. Production and organization, lighting operation and set installation."
         },
         {
+          "id": "art",
+          "featured": true,
+          "date": "2022",
+          "categories": [
+            "production",
+            "technical"
+          ],
           "title": "Art",
           "meta": "Sisifos Sanat, 2022–2023",
-          "text": "Assistant director, lighting and sound operator, and part of the stage design team (a mobile six-panel structure that rotates into a triangle).",
-          "date": "2022"
+          "roles": [
+            "Assistant director",
+            "Lighting and sound operation",
+            "Stage design collaboration"
+          ],
+          "text": "Assistant director, lighting and sound operator, and part of the stage design team (a mobile six-panel structure that rotates into a triangle)."
         },
         {
+          "id": "leenane",
+          "featured": true,
+          "date": "2022",
+          "categories": [
+            "acting",
+            "production"
+          ],
           "title": "The Beauty Queen of Leenane — Actor",
           "meta": "Gri Şehir Tiyatrosu, 2022–2023",
-          "text": "The company's return to the stage after the pandemic and its most frequently performed production. Also responsible for installing key set components, including a working tap and plumbing system.",
-          "date": "2022"
+          "roles": [
+            "Actor",
+            "Stage setup"
+          ],
+          "text": "The company's return to the stage after the pandemic and its most frequently performed production. Also responsible for installing key set components, including a working tap and plumbing system."
         },
         {
-          "title": "Dr. Jekyll & Mr. Hyde",
+          "id": "jekyll-hyde",
+          "featured": true,
+          "date": "2019",
+          "categories": [
+            "acting"
+          ],
+          "title": "Dr. Jekyll & Mr. Hyde — Actor",
           "meta": "Gri Şehir Tiyatrosu, 2018–2020",
-          "text": "The Turkish premiere. Ten distinct spaces created with four chairs, a coffee table, a trunk and a rotating door; sold-out audiences and touring before the pandemic ended the run.",
-          "date": "2019"
+          "roles": [
+            "Actor"
+          ],
+          "text": "The Turkish premiere. Ten distinct spaces created with four chairs, a coffee table, a trunk and a rotating door; sold-out audiences and touring before the pandemic ended the run."
         },
         {
-          "title": "Colonel Bird",
+          "id": "colonel-bird",
+          "date": "2018",
+          "categories": [
+            "acting"
+          ],
+          "title": "Colonel Bird — Actor",
           "meta": "Gri Şehir Tiyatrosu, 2018–2019",
-          "text": "The company's debut and first fully independent production.",
-          "date": "2018"
-        },
-        {
-          "title": "Independent Productions — Creative & Production Roles",
-          "meta": "Gri Şehir Tiyatrosu & Sisifos Sanat, 2018–Present",
-          "text": "Acting, assistant directing, production support, organisational coordination, light and sound operation and backstage workflow. Co-founding member of both companies.",
-          "date": "2018"
+          "roles": [
+            "Actor"
+          ],
+          "text": "The company's debut and first fully independent production."
         }
       ],
-      "id": "works"
+      "filters": [
+        "acting",
+        "improvisation",
+        "production",
+        "technical"
+      ]
     },
     {
-      "title": "Training",
+      "id": "companies",
+      "title": "Theatre Companies",
+      "nav": "Companies",
       "items": [
         {
+          "id": "gri-sehir-tiyatrosu",
+          "title": "Gri Şehir Tiyatrosu",
+          "meta": "2018–2023",
+          "roles": [
+            "Founding member",
+            "Acting",
+            "Production coordination",
+            "Technical and backstage work"
+          ],
+          "text": "Involved in Colonel Bird, Dr. Jekyll & Mr. Hyde, The Beauty Queen of Leenane and Ah'lar Ağacı."
+        },
+        {
+          "id": "sisifos-sanat",
+          "title": "Sisifos Sanat",
+          "meta": "2021–2026",
+          "roles": [
+            "Founding member",
+            "Acting",
+            "Producing",
+            "Budget and resource coordination",
+            "Festival and venue organisation",
+            "Technical operation"
+          ],
+          "text": "Involved in Kaktüslü Adam, Art and Waiting for Waiting for Godot."
+        },
+        {
+          "id": "cosa-sahne",
+          "title": "Cosa Sahne",
+          "meta": "2026–Present",
+          "roles": [
+            "Theatre workshop organisation",
+            "Improvisation",
+            "Performance organisation",
+            "Instructor and participant coordination",
+            "Rehearsal and venue operations"
+          ],
+          "text": "Improvisation performances and theatre workshops."
+        }
+      ]
+    },
+    {
+      "id": "improvisation",
+      "title": "Improvisation",
+      "nav": "Improvisation",
+      "items": [
+        {
+          "id": "kirik-pot-dogaclama",
+          "date": "2026-05",
+          "categories": [
+            "improvisation"
+          ],
+          "title": "Kırık Pot Doğaçlama",
+          "meta": "May–June 2026 · Fade Stage · Short-form improvisation",
+          "text": "Short-form improvisation work and stage performances with Kırık Pot Doğaçlama.",
+          "links": [
+            {
+              "label": "Instagram @kirikpotdogaclama",
+              "url": "https://www.instagram.com/kirikpotdogaclama/"
+            }
+          ]
+        },
+        {
+          "id": "dasdas-dogaclama-festivali",
+          "date": "2026-09",
+          "categories": [
+            "improvisation"
+          ],
+          "title": "DasDas Improvisation Festival",
+          "meta": "September 2026 · DasDas, Istanbul · Cosa Sahne",
+          "text": "Improvisational theatre performance with Cosa Sahne at the DasDas Improvisation Festival."
+        }
+      ]
+    },
+    {
+      "id": "production",
+      "title": "Technical Theatre & Production",
+      "nav": "Technical Theatre",
+      "items": [
+        {
+          "id": "technical-practice",
+          "title": "Technical theatre and production practice",
+          "roles": [
+            "Lighting operation",
+            "Sound operation",
+            "Lighting realization",
+            "Technical setup",
+            "Stage installation",
+            "Production coordination",
+            "Festival technical requirements",
+            "Technical riders",
+            "Touring adaptations"
+          ],
+          "text": "Technical and production work carried out as a founding member of Gri Şehir Tiyatrosu and Sisifos Sanat, kept separate from the freelance credits below."
+        }
+      ],
+      "subsections": [
+        {
+          "id": "freelance",
+          "title": "Freelance Technical Theatre",
+          "text": "I work freelance in lighting realization, lighting operation and sound operation.",
+          "items": [
+            {
+              "id": "lysistrata-nin-elmasi",
+              "title": "Lysistrata'nın Elması",
+              "company": "Aksi Tiyatro",
+              "meta": "2026–Present",
+              "ongoing": true
+            },
+            {
+              "id": "domuz",
+              "title": "Domuz",
+              "company": "Farabi Sahnesi",
+              "meta": "2026–Present",
+              "ongoing": true
+            },
+            {
+              "id": "rumuz-goncagul",
+              "title": "Rumuz Goncagül",
+              "company": "MasKumpanya",
+              "meta": "2026–Present",
+              "ongoing": true
+            },
+            {
+              "id": "yapay-zamanlar",
+              "title": "Yapay Zamanlar",
+              "company": "Bedi Sanat",
+              "meta": "2026–Present",
+              "ongoing": true,
+              "roles": [
+                "Stage manager (reji direktörü)"
+              ]
+            },
+            {
+              "id": "heybeden-gercekustu-cocuklar",
+              "title": "Heybeden Gerçeküstü Çocuklar",
+              "company": "Bedi Sanat",
+              "meta": "2026–Present",
+              "ongoing": true,
+              "roles": [
+                "Stage manager (reji direktörü)"
+              ]
+            },
+            {
+              "id": "kocasini-pisiren-kadinlar",
+              "title": "Kocasını Pişiren Kadınlar",
+              "company": "Aksi Tiyatro",
+              "meta": "June 2026",
+              "ongoing": false
+            },
+            {
+              "id": "ispirtizma",
+              "title": "İspirtizma",
+              "company": "Mustafa Budak Lab",
+              "meta": "March–May 2026",
+              "ongoing": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "facilitation",
+      "title": "Workshops & Facilitation",
+      "nav": "Workshops",
+      "items": [
+        {
+          "id": "cosa-sahne-atolyesi",
+          "date": "2026-07",
+          "title": "Cosa Sahne: Drama, Improvisation & Theatre Workshop",
+          "meta": "July–September 2026 · Cosa Sahne · Eight-week programme · Acting techniques and theatre",
+          "roles": [
+            "Instructor",
+            "Facilitator",
+            "Assistant",
+            "Organiser"
+          ],
+          "text": "Group theatre and improvisation exercises, acting and scene work."
+        }
+      ]
+    },
+    {
+      "id": "training",
+      "title": "Training",
+      "nav": "Training",
+      "items": [
+        {
+          "id": "story-dramaturgy-writing",
+          "date": "2025-01",
+          "categories": [
+            "creation"
+          ],
           "title": "Story, Dramaturgy & Writing",
           "meta": "Beliz Güçbilmez, Jan–Jun 2025",
-          "text": "Four-module laboratory on narrative structure, dramaturgical analysis, metaphor-based writing and re-writing (the \"Magnetic Field Method\").",
-          "date": "2025-01"
+          "text": "Four-module laboratory on narrative structure, dramaturgical analysis, metaphor-based writing and re-writing (the \"Magnetic Field Method\")."
         },
         {
+          "id": "meisner",
+          "date": "2025-05",
+          "categories": [
+            "acting"
+          ],
           "title": "Meisner-based Acting",
           "meta": "Aras Kösedağ, May & Jul 2025",
-          "text": "Listening, impulsive reaction, subtext and moment-to-moment presence through Meisner's repetition. Helped organise a follow-up workshop for Sisifos Sanat.",
-          "date": "2025-05"
+          "text": "Listening, impulsive reaction, subtext and moment-to-moment presence through Meisner's repetition. Helped organise a follow-up workshop for Sisifos Sanat."
         },
         {
+          "id": "laban",
+          "date": "2024-06",
+          "categories": [
+            "physical"
+          ],
           "title": "Laban Movement Analysis",
           "meta": "Ümit Erlim, Jun 2024",
-          "text": "Effort actions, spatial orientation, weight–time–flow dynamics and embodied character work.",
-          "date": "2024-06"
+          "text": "Effort actions, spatial orientation, weight–time–flow dynamics and embodied character work."
         },
         {
+          "id": "directing-acting-workshop",
+          "date": "2025-07",
+          "categories": [
+            "creation"
+          ],
           "title": "Directing & Acting Workshop",
           "meta": "Murat Daltaban, Jul 2025",
-          "text": "Directing principles, actor–director communication, text interpretation and contemporary staging.",
-          "date": "2025-07"
+          "text": "Directing principles, actor–director communication, text interpretation and contemporary staging."
         },
         {
+          "id": "producing-for-theatre",
+          "date": "2025-07",
+          "categories": [
+            "production"
+          ],
           "title": "Producing for Theatre",
           "meta": "Özlem Daltaban, Jul 2025",
-          "text": "Institutional identity, production planning, and international co-production models including touring and funding.",
-          "date": "2025-07"
+          "text": "Institutional identity, production planning, and international co-production models including touring and funding."
         },
         {
+          "id": "ensemble-devised-theatre",
+          "date": "2025-08",
+          "categories": [
+            "physical"
+          ],
           "title": "Ensemble-Based Devised Theatre",
           "meta": "Faysal Dakni, Aug 2025",
-          "text": "Ensemble creation through le jeu, improvisation and physical theatre, generating original material without a predetermined script.",
-          "date": "2025-08"
+          "text": "Ensemble creation through le jeu, improvisation and physical theatre, generating original material without a predetermined script."
         },
         {
+          "id": "storytelling-physical-theatre",
+          "date": "2025-09",
+          "categories": [
+            "physical"
+          ],
           "title": "Storytelling with Physical Theatre",
           "meta": "Güray Dinçol, Sep 2025",
-          "text": "Movement, silence, rhythm and physical play as narrative tools.",
-          "date": "2025-09"
+          "text": "Movement, silence, rhythm and physical play as narrative tools."
         },
         {
+          "id": "michael-chekhov",
+          "date": "2025-10",
+          "categories": [
+            "acting"
+          ],
           "title": "Michael Chekhov Technique",
           "meta": "Ulrich Meyer-Horsch, Oct 2025",
-          "text": "Psycho-physical approach: imagination, breath, movement, body centres, improvisation and ensemble play.",
-          "date": "2025-10"
+          "text": "Psycho-physical approach: imagination, breath, movement, body centres, improvisation and ensemble play."
         },
         {
+          "id": "physical-theatre-clown",
+          "date": "2025-11",
+          "categories": [
+            "physical"
+          ],
           "title": "Physical Theatre & Clown",
           "meta": "Yasin Yürekli, Nov 2025",
-          "text": "Lecoq-inspired work on naivete, playfulness, failure-as-impulse and non-verbal comedy.",
-          "date": "2025-11"
+          "text": "Lecoq-inspired work on naivete, playfulness, failure-as-impulse and non-verbal comedy."
         },
         {
+          "id": "mask-commedia",
+          "date": "2025-11",
+          "categories": [
+            "physical"
+          ],
           "title": "Mask & Body — Commedia dell'Arte",
           "meta": "Claudio de Maglio, Nov 2025",
-          "text": "Foundational mask work on body–rhythm–gesture relationships and physical improvisation.",
-          "date": "2025-11"
-        }
-      ],
-      "id": "training"
-    },
-    {
-      "title": "Skills & Languages",
-      "items": [
-        {
-          "title": "Artistic practice",
-          "meta": "",
-          "text": "Actor and performer in independent theatre; collaborative creation; dramaturgical contribution in ensemble processes; rehearsal coordination and production workflow; light and sound operation; ongoing improv practice (long-form and short-form)."
+          "text": "Foundational mask work on body–rhythm–gesture relationships and physical improvisation."
         },
         {
-          "title": "Languages",
-          "meta": "",
-          "text": "Turkish (native), English (B2, working proficiency; TOEFL iBT 87)."
+          "id": "hale-spolin",
+          "categories": [
+            "improvisation"
+          ],
+          "title": "Spolin-based Improvisation",
+          "meta": "Jason Hale"
+        },
+        {
+          "id": "eskicioglu-mime",
+          "categories": [
+            "physical"
+          ],
+          "title": "Gesture, Mime and Pantomime",
+          "meta": "Tuğba Eskicioğlu"
+        },
+        {
+          "id": "sarikaya-viewpoints",
+          "categories": [
+            "physical"
+          ],
+          "title": "Viewpoints",
+          "meta": "Pelin Sarıkaya"
+        },
+        {
+          "id": "glass-physical-ensemble",
+          "categories": [
+            "physical"
+          ],
+          "title": "Physical Theatre & Ensemble",
+          "meta": "David Glass"
+        },
+        {
+          "id": "hunter-physical-performance",
+          "categories": [
+            "physical"
+          ],
+          "title": "Physical Performance",
+          "meta": "Paul Hunter"
+        },
+        {
+          "id": "meindl-self-tape",
+          "categories": [
+            "acting"
+          ],
+          "title": "Self-tape / Screen Acting",
+          "meta": "Anthony Meindl"
+        },
+        {
+          "id": "letailleur-acting",
+          "categories": [
+            "acting"
+          ],
+          "title": "Acting",
+          "meta": "Erica Letailleur"
+        },
+        {
+          "id": "tuncer-acting",
+          "categories": [
+            "acting"
+          ],
+          "title": "Theatre / Acting",
+          "meta": "Kubilay QB Tunçer"
         }
       ],
-      "id": "skills"
+      "filters": [
+        "acting",
+        "improvisation",
+        "physical",
+        "creation",
+        "production"
+      ],
+      "undatedTitle": "Additional Training"
+    },
+    {
+      "id": "skills",
+      "title": "Skills & Languages",
+      "nav": "Skills",
+      "items": [
+        {
+          "id": "skill-acting",
+          "title": "Acting",
+          "practice": "Acting in independent theatre productions and a short film.",
+          "training": "Meisner-based acting, Michael Chekhov technique, self-tape / screen acting."
+        },
+        {
+          "id": "skill-improvisation",
+          "title": "Improvisation",
+          "practice": "Long-form and short-form improvisation practice; short-form stage performances.",
+          "training": "Spolin-based improvisation."
+        },
+        {
+          "id": "skill-physical",
+          "title": "Physical Theatre",
+          "training": "Laban movement analysis, Lecoq-inspired physical theatre and clown, mask and body (Commedia dell'Arte), Viewpoints, gesture and mime, physical performance."
+        },
+        {
+          "id": "skill-collaborative",
+          "title": "Collaborative Creation",
+          "practice": "Collaborative creation in small independent groups; dramaturgical contribution in ensemble processes.",
+          "training": "Ensemble-based devised theatre; story, dramaturgy and writing."
+        },
+        {
+          "id": "skill-technical",
+          "title": "Technical Theatre",
+          "practice": "Lighting and sound operation, lighting realization, technical and stage setup, technical riders."
+        },
+        {
+          "id": "skill-production",
+          "title": "Theatre Production",
+          "practice": "Rehearsal coordination and production workflow; budget and resource coordination; festival and venue organisation; a custom spreadsheet system built for ticketing and box-office operations.",
+          "training": "Producing for theatre (international co-production models)."
+        },
+        {
+          "id": "skill-facilitation",
+          "title": "Workshop Facilitation",
+          "practice": "Organisation and facilitation of the Cosa Sahne workshop; helped organise a follow-up workshop for Sisifos Sanat."
+        },
+        {
+          "id": "skill-languages",
+          "title": "Languages",
+          "text": "Turkish (native), English (B2, working proficiency; TOEFL iBT 87)."
+        }
+      ]
     },
     {
       "title": "Contact",
@@ -172,7 +600,8 @@
           ]
         }
       ],
-      "id": "contact"
+      "id": "contact",
+      "nav": "Contact"
     }
   ]
 }

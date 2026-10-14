@@ -1,0 +1,66 @@
+---
+import Timeline from './Timeline.astro';
+// One content section. Dated items form a timeline, undated ones a compact list below it.
+// Optional on the section: filters (category ids), undatedTitle, subsections (freelance credits list).
+const { s, p, t, last } = Astro.props;
+const dated = s.items.filter((i) => i.date);
+const undated = s.items.filter((i) => !i.date);
+const timeline = dated.length >= 2;
+const plain = timeline ? undated : s.items;
+const used = new Set(s.items.flatMap((i) => i.categories ?? []));
+const filters = (s.filters ?? []).filter((c) => used.has(c)); // a chip only exists if something carries it
+const cats = t.cats;
+---
+<section class="band" id={`${p}-${s.id}`} data-last={last} data-filter="all">
+  <div class="wrap">
+    <h2>{s.title}</h2>
+    {filters.length > 1 && (
+      <div class="filters" role="group" aria-label={t.filterLabel}>
+        <button type="button" class="chip" data-f="all" aria-pressed="true">{t.filterAll}</button>
+        {filters.map((c) => <button type="button" class="chip" data-f={c} aria-pressed="false">{cats[c]}</button>)}
+      </div>
+    )}
+    {timeline && <Timeline items={dated} id={`${p}-${s.id}`} cats={cats} />}
+    {timeline && undated.length > 0 && s.undatedTitle && <h3 class="subh">{s.undatedTitle}</h3>}
+    {plain.length > 0 && (
+      <div class:list={['plain', { compact: timeline }]}>
+        {plain.map((i) => (
+          <div class="row" data-cat={(i.categories ?? []).join(' ')}>
+            <h3>{i.title}</h3>
+            {i.meta && <p class="when">{i.meta}</p>}
+            {i.roles?.length > 0 && <ul class="roles">{i.roles.map((r) => <li>{r}</li>)}</ul>}
+            {i.text && <p>{i.text}</p>}
+            {i.practice && <p><strong>{t.practice}:</strong> {i.practice}</p>}
+            {i.training && <p><strong>{t.trainingLabel}:</strong> {i.training}</p>}
+            {i.links && <p class="links">{i.links.map((l) => <a href={l.url} rel="noopener">{l.label}</a>)}</p>}
+          </div>
+        ))}
+      </div>
+    )}
+    {(s.subsections ?? []).map((sub) => (
+      <div class="sub" id={`${p}-${sub.id}`}>
+        <h3 class="subh">{sub.title}</h3>
+        {sub.text && <p class="sub-text">{sub.text}</p>}
+        {[[true, t.ongoing], [false, t.completed]].map(([flag, label]) => {
+          const rows = sub.items.filter((i) => !!i.ongoing === flag);
+          return rows.length > 0 && (
+            <>
+              <h4 class="grp">{label}</h4>
+              <ul class="credits">
+                {rows.map((i) => (
+                  <li>
+                    <span class="c-title">{i.title}</span>
+                    <span class="c-co">{i.company}</span>
+                    <span class="c-when">{i.meta}</span>
+                    {i.roles?.length > 0 && <span class="c-role">{i.roles.join(', ')}</span>}
+                  </li>
+                ))}
+              </ul>
+            </>
+          );
+        })}
+      </div>
+    ))}
+    <slot />
+  </div>
+</section>

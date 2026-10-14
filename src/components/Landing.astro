@@ -1,7 +1,7 @@
 ---
 import { ClientRouter } from 'astro:transitions';
 import Face from './Face.astro';
-import Timeline from './Timeline.astro';
+import Band from './Band.astro';
 import '../styles/landing.css';
 import { statSync } from 'node:fs';
 import ui from '../content/ui.json';
@@ -19,7 +19,8 @@ const abs = (path) => new URL(path, Astro.site).href;
 const sectionId = (p, id) => {
   const n = data[p].sections.findIndex((s) => s.id === id);
   if (n < 0) throw new Error(`no section "${id}" in ${p}`); // build fails if a tile points at a renamed section
-  return { n, label: data[p].sections[n].title, href: `#${p}-${id}` };
+  const sec = data[p].sections[n];
+  return { n, label: sec.nav ?? sec.title, href: `#${p}-${id}` };
 };
 const link = (p, id) => ({ kind: 'link', label: sectionId(p, id).label, href: sectionId(p, id).href });
 const down = (p) => ({ kind: 'link', down: true, label: t.scroll, href: `#${p}-top` });
@@ -33,17 +34,17 @@ const tiles = [
   { home: { kind: 'name' } },
   { home: photo('mask'), sanat: link('sanat', 'works'), analist: link('analist', 'experience') },
   { home: key('sanat'), sanat: key('sanat', true), analist: key('sanat', false, true) },
-  { home: photo('star'), sanat: link('sanat', 'training'), analist: link('analist', 'projects') },
+  { home: photo('star'), sanat: link('sanat', 'companies'), analist: link('analist', 'projects') },
   { home: langTile('home'), sanat: langTile('sanat'), analist: langTile('analist') },
-  { home: photo('clap') },
-  { home: photo('bubble') },
+  { home: photo('clap'), sanat: link('sanat', 'improvisation') },
+  { home: photo('bubble'), sanat: link('sanat', 'production') },
   { home: { kind: 'tagline', label: t.tagline }, sanat: down('sanat'), analist: down('analist') },
-  { home: photo('flow'), sanat: link('sanat', 'skills'), analist: link('analist', 'education') },
-  { home: photo('ticket') },
+  { home: photo('flow'), sanat: link('sanat', 'facilitation'), analist: link('analist', 'education') },
+  { home: photo('ticket'), sanat: link('sanat', 'training') },
   { home: photo('flow') },
-  { home: photo('star'), sanat: link('sanat', 'contact'), analist: link('analist', 'skills') },
+  { home: photo('star'), sanat: link('sanat', 'skills'), analist: link('analist', 'skills') },
   { home: key('analist'), sanat: key('analist', false, true), analist: key('analist', true) },
-  { home: photo('mask'), analist: link('analist', 'contact') },
+  { home: photo('mask'), sanat: link('sanat', 'contact'), analist: link('analist', 'contact') },
   { home: photo('clap') },
 ];
 const cv = mode === 'home' ? null : (() => {
@@ -52,7 +53,6 @@ const cv = mode === 'home' ? null : (() => {
 })();
 const noindex = true; // ponytail: set false (and restore public/robots.txt) to open the site to search engines
 const profiles = mode === 'home' ? [] : [mode];
-const hasTimeline = (s) => s.items.filter((i) => i.date).length >= 2;
 const title = mode === 'home' ? 'Berkay Yazar' : `Berkay Yazar · ${data[mode].title}`;
 const description = mode === 'home' ? t.descHome : t['desc' + (mode === 'sanat' ? 'Sanat' : 'Analist')];
 const sameAs = mode === 'home' ? [] : (data[mode].sections.at(-1).items[0].links ?? []).map((l) => l.url).filter((u) => !u.startsWith('mailto'));
@@ -97,7 +97,7 @@ const jsonLd = {
       <nav class="bar" data-p={p} aria-label={data[p].title}>
         <a class="bar-name" href="#grid">Berkay Yazar</a>
         <ul>
-          {data[p].sections.map((s, n) => <li><a href={`#${p}-${s.id}`} data-s={`${p}-${s.id}`}>{s.title}</a></li>)}
+          {data[p].sections.map((s, n) => <li><a href={`#${p}-${s.id}`} data-s={`${p}-${s.id}`}>{s.nav ?? s.title}</a></li>)}
         </ul>
         <a class="bar-top" href="#grid">{t.top} ↑</a>
       </nav>
@@ -123,26 +123,9 @@ const jsonLd = {
             </div>
           </section>
           {data[p].sections.map((s, n) => (
-            <section class="band" id={`${p}-${s.id}`} data-last={n === data[p].sections.length - 1}>
-              <div class="wrap">
-                <h2>{s.title}</h2>
-                {hasTimeline(s)
-                  ? <Timeline items={s.items} id={`${p}${n}`} />
-                  : (
-                    <div class="plain">
-                      {s.items.map((i) => (
-                        <div class="row">
-                          <h3>{i.title}</h3>
-                          {i.meta && <p class="when">{i.meta}</p>}
-                          {i.text && <p>{i.text}</p>}
-                          {i.links && <p class="links">{i.links.map((l) => <a href={l.url}>{l.label}</a>)}</p>}
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                {cv && s.id === 'contact' && <a class="cv-btn light" href={cv.href} download>{t.cv}<small>PDF · {cv.kb} KB</small></a>}
-              </div>
-            </section>
+            <Band s={s} p={p} t={t} last={n === data[p].sections.length - 1}>
+              {cv && s.id === 'contact' && <a class="cv-btn light" href={cv.href} download>{t.cv}<small>PDF · {cv.kb} KB</small></a>}
+            </Band>
           ))}
         </div>
       ))}
@@ -171,6 +154,19 @@ const jsonLd = {
             n.addEventListener('click', () => pick(n));
           });
           pick(nodes[0]);
+        });
+
+        // category filter chips: hide items outside the chosen category, keep the timeline selection on a visible node
+        document.querySelectorAll('.band .filters').forEach((bar) => {
+          const band = bar.closest('.band');
+          bar.addEventListener('click', (e) => {
+            const chip = e.target.closest('.chip');
+            if (!chip) return;
+            const f = chip.dataset.f;
+            bar.querySelectorAll('.chip').forEach((c) => c.setAttribute('aria-pressed', String(c === chip)));
+            band.querySelectorAll('[data-cat]').forEach((el) => (el.hidden = f !== 'all' && !el.dataset.cat.split(' ').includes(f)));
+            band.querySelector('.tl li:not([hidden]) .node')?.click();
+          });
         });
 
         // sticky bar: show once the grid is out of view, mark the section being read

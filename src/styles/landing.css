@@ -118,6 +118,30 @@ body[data-mode='sanat'] .profile[data-p='sanat'], body[data-mode='analist'] .pro
 .role { margin: 1rem 0 0; font-size: clamp(1.1rem, 2.2vw, 1.6rem); color: var(--accent); font-weight: 500; }
 .about { text-wrap: pretty; margin: 2.5rem 0 0; max-width: 62ch; font-size: 1.1rem; color: var(--mute); }
 
+.tl li[hidden] { display: none; }
+.filters { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: -1rem 0 2rem; }
+.chip { min-height: 44px; padding: 0 1.1rem; border: 1px solid var(--line); background: none; color: var(--mute); cursor: pointer; font-weight: 500; transition: background 0.2s, color 0.2s, border-color 0.2s; }
+.chip:hover { color: var(--ink); border-color: var(--ink); }
+.chip[aria-pressed='true'] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.subh { margin: 3rem 0 1rem; font-size: 1.4rem; letter-spacing: -0.03em; }
+.plain.compact { margin-top: 0; gap: 1.5rem clamp(2rem, 5vw, 4rem); }
+.plain.compact .row h3 { font-size: 1rem; }
+.tags { margin: 0.4rem 0 0; font-size: 0.8rem; color: var(--mute); }
+.roles { margin: 0.5rem 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; }
+.roles li { font-size: 0.9rem; color: var(--ink); }
+.roles li::before { content: ''; display: inline-block; width: 5px; height: 5px; margin-right: 0.5rem; background: var(--accent); vertical-align: middle; }
+.row strong { color: var(--ink); font-weight: 500; }
+.sub { margin-top: clamp(3rem, 6vw, 5rem); }
+.sub .subh { margin-top: 0; }
+.sub-text { margin: 0 0 1.5rem; max-width: 62ch; color: var(--mute); text-wrap: pretty; }
+.grp { margin: 2rem 0 0.4rem; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.02em; color: var(--accent); }
+.credits { list-style: none; margin: 0; padding: 0; }
+.credits li { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1.3fr) minmax(0, 1fr); gap: 0.2rem 1.5rem; padding: 0.9rem 0; border-top: 1px solid var(--line); }
+.credits li:last-child { border-bottom: 1px solid var(--line); }
+.c-title { font-weight: 700; letter-spacing: -0.02em; }
+.c-co, .c-when, .c-role { color: var(--mute); }
+.c-role { grid-column: 1 / -1; font-size: 0.9rem; }
+@media (max-width: 700px) { .credits li { grid-template-columns: 1fr; } }
 .band { padding: clamp(4rem, 9vw, 7rem) 0; background: var(--band); border-top: 1px solid var(--line); }
 .band:nth-of-type(even) { background: var(--paper); }
 .band[data-last='true'] { background: var(--accent); color: #fff; border: 0; --mute: rgba(255, 255, 255, 0.78); --line: rgba(255, 255, 255, 0.35); }
@@ -141,7 +165,7 @@ body[data-mode='sanat'] .profile[data-p='sanat'], body[data-mode='analist'] .pro
 .cv-btn.light:hover { filter: none; background: var(--stone); }
 
 /* ---------- timeline ---------- */
-.tl { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); grid-template-rows: repeat(var(--n), auto); column-gap: clamp(2rem, 6vw, 5rem); }
+.tl { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); grid-template-rows: repeat(var(--n), min-content) 1fr; /* spare height from a tall detail panel lands in the last row, not between nodes */ column-gap: clamp(2rem, 6vw, 5rem); }
 .tl::before { content: ''; position: absolute; left: 6px; top: 0.6rem; bottom: 0.6rem; width: 1px; background: var(--line); }
 .tl ol { display: contents; list-style: none; margin: 0; padding: 0; }
 .tl li { display: contents; }
@@ -154,7 +178,7 @@ li[data-on] .node::before { background: var(--accent); border-color: var(--accen
 li[data-on] .tt, .node:hover .tt { color: var(--ink); }
 li[data-on] .tt { font-weight: 700; }
 
-.detail { grid-column: 2; grid-row: 1 / span var(--n); align-self: start; position: sticky; top: 5.5rem; visibility: hidden; opacity: 0; transform: translateY(6px); transition: opacity 0.3s var(--ease), transform 0.4s var(--ease), visibility 0s 0.3s; }
+.detail { grid-column: 2; grid-row: 1 / span var(--n1); align-self: start; position: sticky; top: 5.5rem; visibility: hidden; opacity: 0; transform: translateY(6px); transition: opacity 0.3s var(--ease), transform 0.4s var(--ease), visibility 0s 0.3s; }
 li[data-on] .detail { visibility: visible; opacity: 1; transform: none; transition-delay: 0s; }
 .detail h3 { margin: 1.2rem 0 0; font-size: 1.5rem; letter-spacing: -0.03em; line-height: 1.15; }
 .detail p { margin: 0.6rem 0 0; color: var(--mute); max-width: 56ch; text-wrap: pretty; }
