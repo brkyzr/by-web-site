@@ -25,3 +25,10 @@ Siteye yazılmayan, birlikte tamamlanacak bilgiler. Tamamlananı silin ya da iş
 - [ ] Cloudflare Git otomatik deploy'u çalışmıyor; yayın `wrangler deploy` ile (docs/STATUS.md).
 - [ ] Arama motoru indekslemesi kapalı; açılacak.
 - [ ] Alan adı (isteğe bağlı).
+
+## Dil denetimi (2026-10-14)
+- [ ] **Başlıklarda kalan uzun çizgiler (—):** Eğitimlerde "Maske ve Beden — Commedia dell'Arte"; analist başlıklarında "İş Analisti ve Scrum Master — Innovance Consultancy / Allianz Türkiye", "İş Analisti (Uzman) — Anadolu Sigorta", "Aday Mühendis — FNSS…", "Endüstri Mühendisliği Lisans — Başkent Üniversitesi" gibi. İsterseniz ":" veya virgülle değiştirilir. Tarih aralıklarındaki en tire (2025–2026) kalıyor.
+- [ ] **Rol adı (karakter) olmayan oyunlar:** Leenane'in Güzellik Kraliçesi, Dr. Jekyll ile Bay Hyde, Albay Kuş için karakter adı verisi yok. Eklenince başlığa (Ester gibi) yazılır. Kaktüslü Adam'da karakter adı oyunla aynı olduğu için başlıkta tekrar edilmedi (detayda "Oyuncu (Kaktüslü Adam)").
+- [ ] **Eğitim açıklamaları** (CV'nizden gelen "hareket, sessizlik, ritim ve fiziksel oyun" gibi sıralamalar) ve **Beceriler'deki kalın "Uygulama / Eğitim" etiketleri:** isteğe bağlı sadeleştirme.
+- [ ] **"Aşağı kaydır" karosu:** fotoğraflar gelince "Çalışmalara git" gibi bir etikete dönüştürülecek.
+- [ ] İngilizce metinlerde İngiliz yazımı esas alındı (organisation, realisation). Kaggle kursu "Data Visualization" özel ad olarak kaldı.

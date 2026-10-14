@@ -17,7 +17,7 @@
             "acting",
             "production"
           ],
-          "title": "Waiting for Waiting for Godot — Actor (Ester)",
+          "title": "Waiting for Waiting for Godot (Ester)",
           "meta": "Sisifos Sanat, 2025–Present",
           "roles": [
             "Actor (Ester)",
@@ -32,7 +32,7 @@
           "categories": [
             "acting"
           ],
-          "title": "Kaktüslü Adam (The Man With The Cactus Plant) — Actor",
+          "title": "Kaktüslü Adam (The Man With The Cactus Plant)",
           "meta": "Sisifos Sanat, 2023",
           "roles": [
             "Actor (Kaktüslü Adam)"
@@ -46,7 +46,7 @@
             "production",
             "technical"
           ],
-          "title": "Kaktüslü Adam (The Man With The Cactus Plant) — Technical Lead",
+          "title": "Kaktüslü Adam (The Man With The Cactus Plant), Technical Lead",
           "meta": "Sisifos Sanat, 2021",
           "roles": [
             "Technical lead",
@@ -62,8 +62,8 @@
             "acting",
             "film"
           ],
-          "title": "Feryat (Bellow) — Lead Actor (Ceyhun)",
-          "meta": "Short film, dir. Burak Efe Meyilli, 2021",
+          "title": "Feryat (Ceyhun)",
+          "meta": "Short film (English title: Bellow), dir. Burak Efe Meyilli, 2021",
           "roles": [
             "Lead actor (Ceyhun)"
           ],
@@ -88,7 +88,7 @@
             "Technical operation (lighting)",
             "Production and stage setup"
           ],
-          "text": "A dance- and choreography-driven production adapted from Didem Madak's poetry book. Production and organization, lighting operation and set installation."
+          "text": "A dance- and choreography-driven production adapted from Didem Madak's poetry book. Production and organisation, lighting operation and set installation."
         },
         {
           "id": "art",
@@ -115,7 +115,7 @@
             "acting",
             "production"
           ],
-          "title": "The Beauty Queen of Leenane — Actor",
+          "title": "The Beauty Queen of Leenane",
           "meta": "Gri Şehir Tiyatrosu, 2022–2023",
           "roles": [
             "Actor",
@@ -130,7 +130,7 @@
           "categories": [
             "acting"
           ],
-          "title": "Dr. Jekyll & Mr. Hyde — Actor",
+          "title": "Dr. Jekyll & Mr. Hyde",
           "meta": "Gri Şehir Tiyatrosu, 2018–2020",
           "roles": [
             "Actor"
@@ -143,7 +143,7 @@
           "categories": [
             "acting"
           ],
-          "title": "Colonel Bird — Actor",
+          "title": "Colonel Bird",
           "meta": "Gri Şehir Tiyatrosu, 2018–2019",
           "roles": [
             "Actor"
@@ -333,7 +333,7 @@
           "roles": [
             "Lighting operation",
             "Sound operation",
-            "Lighting realization",
+            "Lighting realisation",
             "Technical setup",
             "Stage installation",
             "Production coordination",
@@ -341,7 +341,7 @@
             "Technical riders",
             "Touring adaptations"
           ],
-          "text": "Technical and production work carried out as a founding member of Gri Şehir Tiyatrosu and Sisifos Sanat, Freelance productions are listed under Selected Works with the “Freelance Technical Theatre” filter. I work freelance in lighting and sound realization and operation."
+          "text": "Technical and production work as a founding member of Gri Şehir Tiyatrosu and Sisifos Sanat. I also work freelance in lighting and sound realisation and operation."
         }
       ]
     },
@@ -575,7 +575,7 @@
         {
           "id": "skill-technical",
           "title": "Technical Theatre",
-          "practice": "Lighting and sound operation, lighting realization, technical and stage setup, technical riders."
+          "practice": "Lighting and sound operation, lighting realisation, technical and stage setup, technical riders."
         },
         {
           "id": "skill-production",
